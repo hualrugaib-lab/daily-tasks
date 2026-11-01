@@ -1845,12 +1845,12 @@ const CONFIG = {
   defaultHours: 24,
   showTeamLoadToMembers: false, // عرض أعداد المهام (المتأخرة/المنجزة) لكل عضو للموظفين؛ افتراضيا للمديرين فقط
   firebase: {
-    apiKey: '',
-    authDomain: '',
-    projectId: '',
-    storageBucket: '',
-    messagingSenderId: '',
-    appId: ''
+    apiKey: "AIzaSyDQYwZy0YjCIBEsVxokbTKT2sHxZ2dd34Q",
+    authDomain: "daily-task-c6b89.firebaseapp.com",
+    projectId: "daily-task-c6b89",
+    storageBucket: "daily-task-c6b89.firebasestorage.app",
+    messagingSenderId: "953043335791",
+    appId: "1:953043335791:web:f09216a1a3c55a4b00eb9a"
   }
 };
 
@@ -3181,7 +3181,7 @@ function showLogin(msg) {
       <div class="who">${S.store.loginUsers.map(u => `<button type="button" class="who-btn" data-act="login-as" data-id="${u.id}">${avatar(u.id, u.name)}<span class="m-txt"><span class="m-name">${esc(u.name)}</span><span class="m-role">${ROLE_LABEL[u.role]}</span></span>${ic('chevL')}</button>`).join('')}</div>
       <p class="hint">البيانات في وضع التجربة محفوظة في هذا المتصفح فقط.</p>`;
   } else {
-    body.innerHTML = `<p class="login-sub">ادخل ببريدك الإلكتروني وكلمة المرور.</p>
+    body.innerHTML = `<p class="login-sub">تسجيل الدخول إلى نظام المهام المرتبط بـ Firebase.</p>
       <form id="loginForm" novalidate>
         <div class="field"><label for="lEmail">البريد الإلكتروني</label><input id="lEmail" type="email" dir="ltr" autocomplete="username" required></div>
         <div class="field"><label for="lPw">كلمة المرور</label><input id="lPw" type="password" dir="ltr" autocomplete="current-password" required></div>
@@ -3388,9 +3388,21 @@ document.addEventListener('visibilitychange', () => { if (!document.hidden) tick
   $$('.app-title').forEach(el => { el.textContent = CONFIG.appTitle; });
   $$('[data-icon]').forEach(el => { if (el.tagName === 'SPAN') el.outerHTML = ic(el.dataset.icon); else el.innerHTML = ic(el.dataset.icon); });
   const fb = CONFIG.firebase;
-  S.store = fb.apiKey && fb.projectId ? new FirebaseStore(fb) : new LocalStore();
+  // وضع الإنتاج: لا يُسمح بالانتقال الصامت إلى بيانات تجريبية محلية.
+  const configReady = ['apiKey', 'authDomain', 'projectId', 'appId'].every(k =>
+    typeof fb[k] === 'string' && fb[k].trim().length > 0
+  );
+  if (!configReady) {
+    $('#loginBody').innerHTML = '<p class="login-sub">إعدادات Firebase غير مكتملة في هذا الملف.</p>';
+    $('#loginErr').textContent = 'يرجى رفع نسخة index.html التي تحتوي على بيانات مشروع Firebase.';
+    return;
+  }
+  S.store = new FirebaseStore(fb);
   try { await S.store.start(onAuth); }
-  catch (e) { $('#loginBody').innerHTML = ''; $('#loginErr').textContent = errText(e); }
+  catch (e) {
+    $('#loginBody').innerHTML = '<p class="login-sub">تعذر الاتصال بخدمة Firebase. تحقق من الإنترنت وإعدادات المشروع ثم أعد تحميل الصفحة.</p>';
+    $('#loginErr').textContent = errText(e);
+  }
   setInterval(tick, 30000);
 })();
 </script>
