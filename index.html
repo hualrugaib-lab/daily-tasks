@@ -1726,6 +1726,50 @@ input[type="hidden"] { display:none!important; }
 @media print{.side,.mbar,.pl-phone-toolbar,.pl-bell,.pl-mobile-bell,.pl-day-add{display:none!important}.pl-cal-header{-webkit-print-color-adjust:exact;print-color-adjust:exact}.pl-calendar{break-inside:avoid}.pl-day{min-height:80px}}
 
 </style>
+<meta name="app-build" content="2026-11-01-phone-countdown-1">
+<style id="phone-countdown-style">
+/* Deadline countdown and embedded shared phone directory, November 2026. */
+.task-countdown{--cd-ink:#4f46c9;--cd-border:#dddaf9;--cd-fill:#6657db;--cd-paper:#f6f5ff;margin-top:14px;padding:12px;border:1px solid var(--cd-border);border-radius:11px;background:var(--cd-paper);color:var(--cd-ink);position:relative;isolation:isolate;font-variant-numeric:tabular-nums}
+.cd-top{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:20px;margin-bottom:10px}
+.cd-heading{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;line-height:1.5}
+.cd-icon{display:inline-flex}.cd-icon .i{width:15px;height:15px}
+.cd-snapshot{font-size:10px;border:1px solid var(--cd-border);border-radius:5px;padding:1px 5px;white-space:nowrap}
+.cd-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.cd-unit{display:flex;flex-direction:column;align-items:center;gap:1px;padding:7px 3px 6px;background:#ffffffc7;border:1px solid var(--cd-border);border-radius:7px;min-width:0}
+.cd-unit b{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:clamp(18px,1.6vw,25px);font-weight:700;line-height:1.25;letter-spacing:.015em;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.cd-unit small{font-size:10px;line-height:1.5;opacity:.85}
+.cd-track{margin-top:10px;height:4px;overflow:hidden;background:var(--cd-border);border-radius:9px}
+.cd-track i{display:block;height:100%;background:var(--cd-fill);border-radius:inherit}
+.cd-due{margin-top:8px;font-size:10.5px;line-height:1.6;color:var(--cd-ink);opacity:.85;overflow-wrap:anywhere}
+.cd-due b{font-weight:500}.cd-sub{margin-top:6px;font-size:11px;font-weight:500}
+.cd-warn{--cd-ink:#924307;--cd-border:#f6d49c;--cd-fill:#e3911d;--cd-paper:#fff7e9}
+.cd-late{--cd-ink:#ad1b2e;--cd-border:#f4abb6;--cd-fill:#dd3047;--cd-paper:#ffe9ed;border-width:1.5px}
+.cd-done{--cd-ink:#0d7253;--cd-border:#b6e3d4;--cd-fill:#18a273;--cd-paper:#edf9f3}
+.cd-unknown{--cd-ink:#667085;--cd-border:#e4e7ec;--cd-fill:#98a2b3;--cd-paper:#f8fafc}
+#dlgDetail .task-countdown{margin:16px 0}.cd-compact{margin:0;padding:8px 10px;min-width:148px;max-width:205px;border-radius:8px}
+.cd-compact .cd-top{margin:0 0 4px;min-height:auto}.cd-compact .cd-heading{font-size:11px}.cd-compact .cd-icon{display:none}
+.cd-inline-value{display:block;text-align:start;font:700 15px/1.4 ui-monospace,Consolas,monospace;white-space:nowrap}
+.cd-compact .cd-sub{font-size:10px;margin-top:2px}
+.pl-directory-summary{display:flex;justify-content:space-between;gap:14px;align-items:center;padding:14px 18px;background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:15px}
+.pl-directory-summary strong{font-size:14px;display:block}.pl-directory-summary p{font-size:12px;margin:3px 0 0;color:var(--muted)}
+.pl-directory-count{display:flex;gap:6px;align-items:baseline;white-space:nowrap;color:#5950b6}.pl-directory-count b{font-size:25px;font-weight:700}.pl-directory-count small{font-size:12px}
+.pl-phone-row .pl-phone-updated{margin-top:3px;font-size:10px;color:#79758e}
+.pl-phone-row .pl-phone-copy{flex-shrink:0;font-variant-numeric:tabular-nums}.pl-phone-row .pl-phone-name{overflow-wrap:anywhere}
+.pl-phone-meta{font-size:12px;color:var(--muted);background:var(--subtle);border:1px solid var(--line);padding:9px 12px;border-radius:8px;margin:0 0 14px}
+#plPhoneError{white-space:pre-wrap}#plPhoneForm[aria-busy="true"]{cursor:progress}
+#plPhonePrintView{display:none}
+@media(max-width:640px){.cd-unit b{font-size:23px}.cd-grid{gap:7px}.pl-directory-summary{padding:12px;align-items:flex-start}.pl-directory-summary p{font-size:11px}.pl-directory-count{flex-direction:column;gap:0}.pl-phone-toolbar button{min-height:38px}}
+@media print{
+ .task-countdown{-webkit-print-color-adjust:exact;print-color-adjust:exact;break-inside:avoid}
+ body.pc-print-phones>*:not(#plPhonePrintView){display:none!important}
+ body.pc-print-phones #plPhonePrintView{display:block!important;color:#111;background:white;font-family:var(--font);direction:rtl}
+ #plPhonePrintView h1{font-size:20px;margin:0 0 6px}#plPhonePrintView>p{font-size:11px;margin:0 0 14px}
+ #plPhonePrintView .pc-print-group{break-inside:auto;margin-bottom:16px}#plPhonePrintView h2{font-size:14px;break-after:avoid;margin:0 0 7px}
+ #plPhonePrintView table{width:100%;border-collapse:collapse;font-size:10px}#plPhonePrintView th,#plPhonePrintView td{border:1px solid #ccc;padding:5px;text-align:right}
+ #plPhonePrintView thead{display:table-header-group}#plPhonePrintView tr{break-inside:avoid}
+}
+
+</style>
 </head>
 <body>
 
@@ -1864,12 +1908,15 @@ input[type="hidden"] { display:none!important; }
 </dialog>
 
 <dialog id="plusNotices" aria-label="التنبيهات"><div class="dlg-form"><div class="dlg-h"><h2>التنبيهات</h2><button type="button" class="btn icon ghost" data-act="close-dlg" aria-label="إغلاق">×</button></div><div class="dlg-b" id="plusNoticesList"></div><div class="dlg-f"><button type="button" class="btn" data-plus="notice-read">تحديد الكل كمقروء</button><button type="button" class="btn" data-act="close-dlg">إغلاق</button></div></div></dialog>
-<dialog id="plPhoneDlg" aria-labelledby="plPhoneTitle"><form id="plPhoneForm" class="dlg-form"><div class="dlg-h"><h2 id="plPhoneTitle">إضافة تحويلة</h2><button type="button" class="btn icon ghost" data-act="close-dlg" aria-label="إغلاق">×</button></div><div class="dlg-b"><div class="row2"><div class="field"><label for="pl_name">اسم الموظف / الموقع</label><input id="pl_name" required maxlength="120"></div><div class="field"><label for="pl_ext">رقم التحويلة</label><input id="pl_ext" required maxlength="20"></div></div><div class="row2"><div class="field"><label for="pl_dept">الإدارة أو القسم</label><input id="pl_dept" maxlength="120"></div><div class="field"><label for="pl_floor">الموقع / الدور</label><input id="pl_floor" maxlength="120"></div></div><div class="field"><label for="pl_note">ملاحظة</label><input id="pl_note" maxlength="250"></div><p class="form-err" id="plPhoneError"></p></div><div class="dlg-f"><button type="button" class="btn danger" id="plPhoneDelete" data-plus="phone-delete" hidden>حذف التحويلة</button><span class="spacer"></span><button class="btn primary" type="submit">حفظ</button><button type="button" class="btn" data-act="close-dlg">إلغاء</button></div></form></dialog>
+<dialog id="plPhoneDlg" aria-labelledby="plPhoneTitle"><form id="plPhoneForm" class="dlg-form"><div class="dlg-h"><h2 id="plPhoneTitle">إضافة تحويلة</h2><button type="button" class="btn icon ghost" data-act="close-dlg" aria-label="إغلاق">×</button></div><div class="dlg-b"><div class="row2"><div class="field"><label for="pl_name">اسم الموظف / الموقع</label><input id="pl_name" required maxlength="120"></div><div class="field"><label for="pl_ext">رقم التحويلة</label><input id="pl_ext" required maxlength="20"></div></div><div class="row2"><div class="field"><label for="pl_dept">الإدارة أو القسم</label><input id="pl_dept" maxlength="120"></div><div class="field"><label for="pl_floor">الموقع / الدور</label><input id="pl_floor" maxlength="120"></div></div><div class="field"><label for="pl_note">ملاحظة</label><input id="pl_note" maxlength="250"></div><p class="pl-phone-meta" id="plPhoneModified" hidden></p><p class="form-err" id="plPhoneError" role="alert"></p></div><div class="dlg-f"><button type="button" class="btn danger" id="plPhoneDelete" data-plus="phone-delete" hidden>حذف التحويلة</button><span class="spacer"></span><button class="btn primary" type="submit">حفظ</button><button type="button" class="btn" data-act="close-dlg">إلغاء</button></div></form></dialog>
 <dialog id="plTransferDlg" aria-labelledby="plTransferTitle"><form id="plTransferForm" class="dlg-form"><div class="dlg-h"><h2 id="plTransferTitle">تفويض المهمة</h2><button type="button" class="btn icon ghost" data-act="close-dlg" aria-label="إغلاق">×</button></div><div class="dlg-b"><input type="hidden" id="plTransferId"><div class="field"><label for="plTransferTo">الموظف المستلم</label><select id="plTransferTo" required></select></div><div class="field"><label for="plTransferReason">سبب التحويل أو الملاحظات</label><textarea id="plTransferReason" maxlength="500" rows="3"></textarea></div><p id="plTransferError" class="form-err"></p><p class="hint">إذا كنت موظفاً، يُرسل طلب لزميلك لقبوله، ثم يكتمل تحويل التكليف عند فتح النظام من أحد المديرين. أما المدير فيستطيع إعادة الإسناد مباشرة.</p></div><div class="dlg-f"><button class="btn primary" type="submit">تأكيد</button><button type="button" class="btn" data-act="close-dlg">إلغاء</button></div></form></dialog>
 <input type="file" id="plPhoneFile" accept=".html,.json" hidden>
 
 <div id="toasts" popover="manual" role="status" aria-live="polite"></div>
 
+<script type="application/json" id="embedded-phone-directory">
+[{"id": "c001", "floor": "الدور الرابع", "floorOrder": 1, "dept": "الإدارة القانونية", "name": "Abdallah Alorini", "ext": "525", "note": "", "seq": 1}, {"id": "c002", "floor": "الدور الرابع", "floorOrder": 1, "dept": "الإدارة القانونية", "name": "Asma Albatli", "ext": "535", "note": "", "seq": 2}, {"id": "c003", "floor": "الدور الرابع", "floorOrder": 1, "dept": "الإدارة القانونية", "name": "Ghadah Alwabel", "ext": "536", "note": "", "seq": 3}, {"id": "c004", "floor": "الدور الرابع", "floorOrder": 1, "dept": "الإدارة القانونية", "name": "Ahmad Alesh", "ext": "515", "note": "", "seq": 4}, {"id": "c005", "floor": "الدور الرابع", "floorOrder": 1, "dept": "الإدارة القانونية", "name": "Mahmoud", "ext": "516", "note": "", "seq": 5}, {"id": "c006", "floor": "الدور الثالث", "floorOrder": 2, "dept": "المجلس التنفيذي", "name": "Khalid Alrugaib", "ext": "555", "note": "", "seq": 6}, {"id": "c007", "floor": "الدور الثالث", "floorOrder": 2, "dept": "المجلس التنفيذي", "name": "Ziad Alrugaib", "ext": "500", "note": "", "seq": 7}, {"id": "c008", "floor": "الدور الثالث", "floorOrder": 2, "dept": "المجلس التنفيذي", "name": "Mohamd AlRugaib", "ext": "100", "note": "", "seq": 8}, {"id": "c009", "floor": "الدور الثالث", "floorOrder": 2, "dept": "المجلس التنفيذي", "name": "Abdulrahman", "ext": "111", "note": "", "seq": 9}, {"id": "c010", "floor": "الدور الثالث", "floorOrder": 2, "dept": "المجلس التنفيذي", "name": "Mohammad Alomar", "ext": "550", "note": "السكرتير التنفيذي", "seq": 10}, {"id": "c011", "floor": "الدور الثالث", "floorOrder": 2, "dept": "مرافق الدور", "name": "مجلس الدور الثالث", "ext": "117", "note": "", "seq": 11}, {"id": "c012", "floor": "الدور الثالث", "floorOrder": 2, "dept": "مرافق الدور", "name": "قاعة اجتماعات الدور الثالث", "ext": "505", "note": "", "seq": 12}, {"id": "c013", "floor": "الدور الثالث", "floorOrder": 2, "dept": "البوفيه", "name": "Abu Taher", "ext": "3", "note": "", "seq": 13}, {"id": "c014", "floor": "الدور الثاني", "floorOrder": 3, "dept": "الإدارة المالية", "name": "Hisham Mustafa", "ext": "222", "note": "", "seq": 14}, {"id": "c015", "floor": "الدور الثاني", "floorOrder": 3, "dept": "الإدارة المالية", "name": "Ehab Kamal", "ext": "200", "note": "", "seq": 15}, {"id": "c016", "floor": "الدور الثاني", "floorOrder": 3, "dept": "الإدارة المالية", "name": "Ismail Abdalradi", "ext": "214", "note": "", "seq": 16}, {"id": "c017", "floor": "الدور الثاني", "floorOrder": 3, "dept": "الإدارة المالية", "name": "Ahmed Mukhtar", "ext": "215", "note": "", "seq": 17}, {"id": "c018", "floor": "الدور الثاني", "floorOrder": 3, "dept": "الإدارة المالية", "name": "Ahmed Saeed", "ext": "220", "note": "", "seq": 18}, {"id": "c019", "floor": "الدور الثاني", "floorOrder": 3, "dept": "الإدارة المالية", "name": "Ahmed Soliman", "ext": "126", "note": "", "seq": 19}, {"id": "c020", "floor": "الدور الثاني", "floorOrder": 3, "dept": "الإدارة المالية", "name": "Aneesh", "ext": "210", "note": "", "seq": 20}, {"id": "c021", "floor": "الدور الثاني", "floorOrder": 3, "dept": "الإدارة المالية", "name": "Khalid Almufada", "ext": "246", "note": "", "seq": 21}, {"id": "c022", "floor": "الدور الثاني", "floorOrder": 3, "dept": "الإدارة المالية", "name": "Mohamed Umer", "ext": "141", "note": "", "seq": 22}, {"id": "c023", "floor": "الدور الثاني", "floorOrder": 3, "dept": "الإدارة المالية", "name": "Mohammed Tohami", "ext": "219", "note": "", "seq": 23}, {"id": "c024", "floor": "الدور الثاني", "floorOrder": 3, "dept": "الإدارة المالية", "name": "Mostafa Hammam", "ext": "211", "note": "", "seq": 24}, {"id": "c025", "floor": "الدور الثاني", "floorOrder": 3, "dept": "الإدارة المالية", "name": "Osman Ltef", "ext": "218", "note": "", "seq": 25}, {"id": "c026", "floor": "الدور الثاني", "floorOrder": 3, "dept": "الإدارة المالية", "name": "Zia Khan", "ext": "244", "note": "", "seq": 26}, {"id": "c027", "floor": "الدور الثاني", "floorOrder": 3, "dept": "الخدمات الإدارية", "name": "Abdulaziz Aleniz", "ext": "120", "note": "", "seq": 27}, {"id": "c028", "floor": "الدور الثاني", "floorOrder": 3, "dept": "الخدمات الإدارية", "name": "الخدمات الحكومية", "ext": "114", "note": "", "seq": 28}, {"id": "c029", "floor": "الدور الثاني", "floorOrder": 3, "dept": "القسم النسائي", "name": "Ladies Acc", "ext": "280", "note": "", "seq": 29}, {"id": "c030", "floor": "الدور الثاني", "floorOrder": 3, "dept": "شؤون الموظفين", "name": "Abdalhamid", "ext": "213", "note": "", "seq": 30}, {"id": "c031", "floor": "الدور الثاني", "floorOrder": 3, "dept": "شؤون الموظفين", "name": "Moh Baamer", "ext": "258", "note": "", "seq": 31}, {"id": "c032", "floor": "الدور الثاني", "floorOrder": 3, "dept": "شؤون الموظفين", "name": "Sandeep", "ext": "209", "note": "", "seq": 32}, {"id": "c033", "floor": "الدور الثاني", "floorOrder": 3, "dept": "شؤون الموظفين", "name": "Zenilda", "ext": "212", "note": "", "seq": 33}, {"id": "c034", "floor": "الدور الثاني", "floorOrder": 3, "dept": "صحارى العربية", "name": "Ayman Bamhrez", "ext": "128", "note": "", "seq": 34}, {"id": "c035", "floor": "الدور الثاني", "floorOrder": 3, "dept": "صحارى العربية", "name": "Mustafa Selima", "ext": "205", "note": "", "seq": 35}, {"id": "c036", "floor": "الدور الثاني", "floorOrder": 3, "dept": "صحارى العربية", "name": "Reema Alkheliwi", "ext": "127", "note": "", "seq": 36}, {"id": "c037", "floor": "الدور الثاني", "floorOrder": 3, "dept": "البوفيه", "name": "بوفيه الدور الثاني", "ext": "322", "note": "", "seq": 37}, {"id": "c038", "floor": "الدور الأول", "floorOrder": 4, "dept": "طيف الشبكة", "name": "Ibrahim Alabdulhafid", "ext": "444", "note": "", "seq": 38}, {"id": "c039", "floor": "الدور الأول", "floorOrder": 4, "dept": "طيف الشبكة", "name": "Imad Armanazi", "ext": "477", "note": "", "seq": 39}, {"id": "c040", "floor": "الدور الأول", "floorOrder": 4, "dept": "طيف الشبكة", "name": "Hisham Khader", "ext": "466", "note": "", "seq": 40}, {"id": "c041", "floor": "الدور الأول", "floorOrder": 4, "dept": "طيف الشبكة", "name": "Ibrahim Alshuraim", "ext": "455", "note": "", "seq": 41}, {"id": "c042", "floor": "الدور الأول", "floorOrder": 4, "dept": "طيف الشبكة", "name": "Mohammed Afran", "ext": "411", "note": "", "seq": 42}, {"id": "c043", "floor": "الدور الأول", "floorOrder": 4, "dept": "طيف الشبكة", "name": "Mohammed Alrabiah", "ext": "433", "note": "", "seq": 43}, {"id": "c044", "floor": "الدور الأول", "floorOrder": 4, "dept": "طيف الشبكة", "name": "Rizaan Laheer", "ext": "422", "note": "", "seq": 44}, {"id": "c045", "floor": "الدور الأول", "floorOrder": 4, "dept": "الإدارة الهندسية", "name": "Mohammed Kayali", "ext": "121", "note": "", "seq": 45}, {"id": "c046", "floor": "الدور الأول", "floorOrder": 4, "dept": "الرقيب الإنشائية", "name": "Ahmad Madani", "ext": "129", "note": "", "seq": 46}, {"id": "c047", "floor": "الدور الأول", "floorOrder": 4, "dept": "الرقيب الإنشائية", "name": "Amgad Ahmed", "ext": "133", "note": "", "seq": 47}, {"id": "c048", "floor": "الدور الأول", "floorOrder": 4, "dept": "الرقيب الإنشائية", "name": "Huzaifa Altaleb", "ext": "131", "note": "", "seq": 48}, {"id": "c049", "floor": "الدور الأول", "floorOrder": 4, "dept": "الرقيب الإنشائية", "name": "Iqbal", "ext": "132", "note": "", "seq": 49}, {"id": "c050", "floor": "الدور الأول", "floorOrder": 4, "dept": "الرقيب الإنشائية", "name": "Mohamed Reda", "ext": "118", "note": "", "seq": 50}, {"id": "c051", "floor": "الدور الأول", "floorOrder": 4, "dept": "الرقيب الإنشائية", "name": "Mohammad Awad", "ext": "109", "note": "", "seq": 51}, {"id": "c052", "floor": "الدور الأول", "floorOrder": 4, "dept": "إدارة المشتريات", "name": "مشتريات الأعلاف", "ext": "115", "note": "", "seq": 52}, {"id": "c053", "floor": "الدور الأول", "floorOrder": 4, "dept": "إدارة المشتريات", "name": "Mokthar Showeka", "ext": "240", "note": "", "seq": 53}, {"id": "c054", "floor": "الدور الأول", "floorOrder": 4, "dept": "إدارة المشتريات", "name": "Paulo Monton", "ext": "243", "note": "", "seq": 54}, {"id": "c055", "floor": "الدور الأول", "floorOrder": 4, "dept": "إدارة المشتريات", "name": "Rawi Algorashi", "ext": "703", "note": "", "seq": 55}, {"id": "c056", "floor": "الدور الأول", "floorOrder": 4, "dept": "جول", "name": "Amry Alhsan", "ext": "105", "note": "", "seq": 56}, {"id": "c057", "floor": "الدور الأول", "floorOrder": 4, "dept": "مرافق الدور", "name": "قاعة اجتماعات الدور الأول", "ext": "551", "note": "", "seq": 57}, {"id": "c058", "floor": "الدور الأول", "floorOrder": 4, "dept": "البوفيه", "name": "بوفيه الدور الأول", "ext": "10", "note": "", "seq": 58}, {"id": "c059", "floor": "الدور الأرضي", "floorOrder": 5, "dept": "الاستقبال", "name": "الاستقبال الرئيسي", "ext": "123", "note": "", "seq": 59}, {"id": "c060", "floor": "الدور الأرضي", "floorOrder": 5, "dept": "الغذاء والترفيه", "name": "Essam Ashour", "ext": "102", "note": "", "seq": 60}, {"id": "c061", "floor": "الدور الأرضي", "floorOrder": 5, "dept": "الغذاء والترفيه", "name": "Anton Betito", "ext": "103", "note": "", "seq": 61}, {"id": "c062", "floor": "الدور الأرضي", "floorOrder": 5, "dept": "الغذاء والترفيه", "name": "Hussein Ahmed", "ext": "122", "note": "", "seq": 62}, {"id": "c063", "floor": "الدور الأرضي", "floorOrder": 5, "dept": "الغذاء والترفيه", "name": "Tempesta Admin", "ext": "108", "note": "", "seq": 63}, {"id": "c064", "floor": "الدور الأرضي", "floorOrder": 5, "dept": "رماح الشرق الأوسط", "name": "Sameh Younes", "ext": "151", "note": "", "seq": 64}, {"id": "c065", "floor": "الدور الأرضي", "floorOrder": 5, "dept": "رماح الشرق الأوسط", "name": "Fahad Alzahrani", "ext": "150", "note": "", "seq": 65}, {"id": "c066", "floor": "الدور الأرضي", "floorOrder": 5, "dept": "رماح الشرق الأوسط", "name": "Hussein Helani", "ext": "153", "note": "", "seq": 66}, {"id": "c067", "floor": "الدور الأرضي", "floorOrder": 5, "dept": "رماح الشرق الأوسط", "name": "Moh Maradni", "ext": "152", "note": "", "seq": 67}, {"id": "c068", "floor": "الدور الأرضي", "floorOrder": 5, "dept": "رماح الشرق الأوسط", "name": "Ahmad Frhan", "ext": "154", "note": "", "seq": 68}, {"id": "c069", "floor": "خارج المقر", "floorOrder": 6, "dept": "ميثاق", "name": "Hossam Alenany", "ext": "700", "note": "", "seq": 69}, {"id": "c070", "floor": "خارج المقر", "floorOrder": 6, "dept": "ميثاق", "name": "Ahmad Kawathmi", "ext": "711", "note": "", "seq": 70}, {"id": "c071", "floor": "خارج المقر", "floorOrder": 6, "dept": "ميثاق", "name": "Yaser Al Arabi", "ext": "722", "note": "", "seq": 71}, {"id": "c072", "floor": "خارج المقر", "floorOrder": 6, "dept": "ميثاق", "name": "Abdelfattah", "ext": "706", "note": "", "seq": 72}, {"id": "c073", "floor": "خارج المقر", "floorOrder": 6, "dept": "ميثاق", "name": "Abdullah", "ext": "713", "note": "", "seq": 73}, {"id": "c074", "floor": "خارج المقر", "floorOrder": 6, "dept": "ميثاق", "name": "Abdulrahman", "ext": "708", "note": "", "seq": 74}, {"id": "c075", "floor": "خارج المقر", "floorOrder": 6, "dept": "ميثاق", "name": "Ayman Majed", "ext": "716", "note": "", "seq": 75}, {"id": "c076", "floor": "خارج المقر", "floorOrder": 6, "dept": "ميثاق", "name": "Bader", "ext": "701", "note": "", "seq": 76}, {"id": "c077", "floor": "خارج المقر", "floorOrder": 6, "dept": "ميثاق", "name": "Ibrahim Mohamed", "ext": "705", "note": "", "seq": 77}, {"id": "c078", "floor": "خارج المقر", "floorOrder": 6, "dept": "ميثاق", "name": "Khalid", "ext": "709", "note": "", "seq": 78}, {"id": "c079", "floor": "خارج المقر", "floorOrder": 6, "dept": "ميثاق", "name": "Mohamed Alarabi", "ext": "707", "note": "", "seq": 79}, {"id": "c080", "floor": "خارج المقر", "floorOrder": 6, "dept": "ميثاق", "name": "Mostafa", "ext": "702", "note": "", "seq": 80}, {"id": "c081", "floor": "خارج المقر", "floorOrder": 6, "dept": "ميثاق", "name": "Nabil", "ext": "752", "note": "", "seq": 81}, {"id": "c082", "floor": "خارج المقر", "floorOrder": 6, "dept": "ميثاق", "name": "قاعة اجتماعات ميثاق", "ext": "715", "note": "", "seq": 82}, {"id": "c083", "floor": "خارج المقر", "floorOrder": 6, "dept": "ميثاق", "name": "استقبال ميثاق", "ext": "712", "note": "", "seq": 83}, {"id": "c084", "floor": "خارج المقر", "floorOrder": 6, "dept": "البوفيه", "name": "بوفيه ميثاق", "ext": "710", "note": "", "seq": 84}]
+</script>
 <script>
 'use strict';
 
@@ -2691,14 +2738,171 @@ function avStack(ids, max = 3) {
   return `<span class="avs" title="${esc(names)}">${ids.slice(0, max).map(id => avatar(id, uname(id))).join('')}${ids.length > max ? `<span class="av more" aria-hidden="true">+${ids.length - max}</span>` : ''}<span class="sr">المكلّفون: ${esc(names)}</span></span>`;
 }
 
+const PC_TEXT={
+  "remaining": "الوقت المتبقي للإنجاز",
+  "near": "اقترب الموعد النهائي",
+  "overdue": "متأخرة منذ",
+  "done": "منجزة",
+  "onTime": "أُنجزت في الموعد",
+  "doneLate": "أُنجزت بعد الموعد",
+  "early": "الوقت المتبقي عند الإنجاز",
+  "delayAtCompletion": "مدة التأخير عند الإنجاز",
+  "exactTime": "أُنجزت في الموعد المحدد",
+  "noDue": "لا يوجد موعد نهائي",
+  "days": "يوم",
+  "hours": "ساعة",
+  "minutes": "دقيقة",
+  "seconds": "ثانية",
+  "shortDay": "ي",
+  "deadline": "الموعد النهائي:",
+  "snapshot": "حسب اليوم المعروض",
+  "directoryTitle": "دليل التحويلات الداخلية",
+  "sharedDirectory": "دليل الهواتف المشترك للفريق",
+  "directoryIntro": "القائمة الأصلية مدمجة تلقائياً — تُحفظ تعديلات الفريق وتُزامن عبر Firebase.",
+  "extensions": "تحويلة",
+  "phoneSearch": "البحث في الدليل",
+  "searchPlaceholder": "اسم الموظف أو رقم التحويلة أو الجهة",
+  "groupBy": "طريقة العرض",
+  "byFloor": "حسب الدور",
+  "byDepartment": "حسب الجهة",
+  "addExtension": "إضافة تحويلة",
+  "editExtension": "تعديل التحويلة",
+  "print": "طباعة",
+  "exportCSV": "تصدير CSV",
+  "noMatches": "لا توجد نتائج تطابق البحث.",
+  "directoryEmpty": "لا توجد تحويلات حالياً. يمكنك إضافة تحويلة جديدة.",
+  "copyNumber": "نسخ رقم التحويلة",
+  "lastEdit": "آخر تعديل",
+  "edit": "تعديل",
+  "company": "الرقيب القابضة",
+  "name": "الاسم",
+  "extension": "التحويلة",
+  "department": "الجهة",
+  "location": "الموقع",
+  "note": "ملاحظة",
+  "copied": "نُسخ رقم التحويلة",
+  "copyManually": "يمكنك تحديد الرقم أدناه ونسخه.",
+  "close": "إغلاق",
+  "originalEntry": "بيانات من الدليل الأصلي",
+  "nameAndExtension": "الاسم ورقم التحويلة مطلوبان.",
+  "savedForTeam": "حُفظت التحويلة في الدليل المشترك.",
+  "unspecified": "غير محدد",
+  "signInFirst": "يرجى تسجيل الدخول أولاً.",
+  "directoryNotReady": "لم تكتمل تهيئة الدليل المشترك. يرجى فتح التطبيق بحساب المدير لتجهيزه تلقائياً.",
+  "concurrentEntry": "عدّل زميل آخر هذه التحويلة أو حذفها أثناء تحريرك. انسخ تعديلاتك، ثم أغلق النافذة وافتح السجل مجدداً لمراجعة آخر تحديث."
+};
+
+/* Live deadline display: no polling or writes to Firebase. */
+function deadlineAt(t, ref) {
+  let due = Number(t.dueAt);
+  if (ref) {
+    const events = [...(t.history || [])].sort((a,b) => a.at-b.at);
+    for (let i=events.length-1;i>=0;i--) {
+      const h=events[i];
+      if (h.type==='due' && h.at>ref && Number.isFinite(+h.from)) due=+h.from;
+    }
+  }
+  return due;
+}
+function countdownData(t, view=null) {
+  const ref=view && !view.isToday ? Number(view.ref) : 0;
+  const status=view ? view.status : t.status;
+  let completed=Number(t.completedAt)||0;
+  if (status==='done') {
+    const until=ref||Date.now();
+    const events=(t.history||[]).filter(h=>h.type==='status' && h.at<=until).sort((a,b)=>a.at-b.at);
+    const last=events[events.length-1];
+    if(last && last.to==='done') completed=Number(last.at)||completed;
+  }
+  return {due:deadlineAt(t,ref),created:Number(t.createdAt),done:status==='done',completed,ref};
+}
+function countdownState(d, now=Date.now()) {
+  const at=d.ref||now, total=Math.max(1,d.due-d.created);
+  if(!Number.isFinite(d.due)||d.due<=0) return {tone:'unknown',label:PC_TEXT.noDue,seconds:0,progress:0,at};
+  if(d.done) {
+    if(!d.completed) return {tone:'done',label:PC_TEXT.done,seconds:0,progress:100,at};
+    const delta=d.due-d.completed;
+    return {tone:'done',label:delta>=0?PC_TEXT.onTime:PC_TEXT.doneLate,
+      sub:delta>0?PC_TEXT.early:delta<0?PC_TEXT.delayAtCompletion:PC_TEXT.exactTime,
+      seconds:Math.floor(Math.abs(delta)/1000),progress:100,at};
+  }
+  const remaining=d.due-at;
+  if(remaining<=0) return {tone:'late',label:PC_TEXT.overdue,seconds:Math.floor(-remaining/1000),progress:100,at};
+  const ratio=Math.max(0,Math.min(1,remaining/total));
+  return {tone:ratio<=0.25?'warn':'normal',label:ratio<=0.25?PC_TEXT.near:PC_TEXT.remaining,
+    seconds:Math.ceil(remaining/1000),progress:ratio*100,at};
+}
+function countdownParts(seconds) {
+  seconds=Math.max(0,Math.floor(seconds));
+  return [Math.floor(seconds/86400),Math.floor(seconds/3600)%24,Math.floor(seconds/60)%60,seconds%60];
+}
+function countdownFullText(state) {
+  const p=countdownParts(state.seconds);
+  return `${state.label}${state.sub?' - '+state.sub:''}: ${p[0]} ${PC_TEXT.days}, ${p[1]} ${PC_TEXT.hours}, ${p[2]} ${PC_TEXT.minutes}, ${p[3]} ${PC_TEXT.seconds}`;
+}
+function countdownHTML(t, view=null, compact=false) {
+  const d=countdownData(t,view),st=countdownState(d),parts=countdownParts(st.seconds);
+  const tokens=[PC_TEXT.days,PC_TEXT.hours,PC_TEXT.minutes,PC_TEXT.seconds];
+  const icon=st.tone==='done'?'check':'clock';
+  const until=Number.isFinite(d.due)&&d.due>0?fDateTime.format(d.due):PC_TEXT.noDue;
+  const short=`${parts[0]}${PC_TEXT.shortDay} ${pad(parts[1])}:${pad(parts[2])}:${pad(parts[3])}`;
+  return `<div class="task-countdown cd-${st.tone}${compact?' cd-compact':''}" data-countdown data-cd-id="${esc(t.id)}" data-cd-due="${d.due}" data-cd-created="${d.created}" data-cd-done="${d.done?'1':'0'}" data-cd-completed="${d.completed}" data-cd-ref="${d.ref}" role="timer" aria-live="off" aria-label="${esc(countdownFullText(st))}">
+    <div class="cd-top"><span class="cd-heading"><span class="cd-icon" aria-hidden="true">${ic(icon)}</span><span data-cd-label>${st.label}</span></span>${d.ref?`<span class="cd-snapshot">${PC_TEXT.snapshot}</span>`:''}</div>
+    ${compact?`<strong class="cd-inline-value" dir="ltr" data-cd-inline>${short}</strong>`:`<div class="cd-grid" aria-hidden="true">${parts.map((n,i)=>`<div class="cd-unit"><b dir="ltr" data-cd-unit="${i}">${pad(n)}</b><small>${tokens[i]}</small></div>`).join('')}</div>`}
+    <div class="cd-sub" data-cd-sub ${st.sub?'':'hidden'}>${st.sub||''}</div>
+    ${compact?'':`<div class="cd-track" aria-hidden="true"><i data-cd-progress style="width:${st.progress.toFixed(2)}%"></i></div><div class="cd-due"><span>${PC_TEXT.deadline}</span> <b class="iso">${until}</b></div>`}
+  </div>`;
+}
+function updateCountdownElements(root=document) {
+  const now=Date.now();
+  root.querySelectorAll('[data-countdown]').forEach(el=>{
+    const ds=el.dataset;
+    const d={due:+ds.cdDue,created:+ds.cdCreated,done:ds.cdDone==='1',completed:+ds.cdCompleted,ref:+ds.cdRef};
+    const st=countdownState(d,now),p=countdownParts(st.seconds);
+    const set=(n,txt)=>{if(n&&n.textContent!==txt)n.textContent=txt;};
+    set(el.querySelector('[data-cd-label]'),st.label);
+    p.forEach((value,i)=>set(el.querySelector(`[data-cd-unit="${i}"]`),pad(value)));
+    set(el.querySelector('[data-cd-inline]'),`${p[0]}${PC_TEXT.shortDay} ${pad(p[1])}:${pad(p[2])}:${pad(p[3])}`);
+    const sub=el.querySelector('[data-cd-sub]');if(sub){set(sub,st.sub||'');sub.hidden=!st.sub;}
+    const progress=el.querySelector('[data-cd-progress]');if(progress)progress.style.width=st.progress.toFixed(2)+'%';
+    const cls=`task-countdown cd-${st.tone}${el.classList.contains('cd-compact')?' cd-compact':''}`;
+    if(el.className!==cls)el.className=cls;
+    const label=countdownFullText(st);if(el.getAttribute('aria-label')!==label)el.setAttribute('aria-label',label);
+    const card=el.closest('article.task');if(card)card.classList.toggle('late',st.tone==='late');
+    const row=el.closest('tr[data-id]');if(row)row.classList.toggle('late-row',st.tone==='late');
+  });
+}
+let countdownClock=null;
+function resumeCountdownClock() {
+  clearTimeout(countdownClock);countdownClock=null;
+  if(document.hidden)return;
+  if(S.me)updateCountdownElements();
+  countdownClock=setTimeout(resumeCountdownClock,1000-(Date.now()%1000)+15);
+}
+document.addEventListener('visibilitychange',resumeCountdownClock);
+window.addEventListener('pageshow',resumeCountdownClock);
+window.addEventListener('focus',resumeCountdownClock);
+window.addEventListener('pagehide',()=>{clearTimeout(countdownClock);countdownClock=null;});
+/* Draft comments stay in memory for the current user; they are not made public. */
+const commentDrafts=new Map();
+const draftKey=id=>`${S.me?.id||''}:${id}`;
+function clearCommentDraft(id,sent) {
+  const key=draftKey(id),draft=commentDrafts.get(key);
+  if(!draft||draft.text.trim()===sent.trim())commentDrafts.delete(key);
+  const box=document.getElementById('plCommentText');
+  if(S.openDetail===id && box && box.value.trim()===sent.trim())box.value='';
+}
+document.addEventListener('input',e=>{
+  if(e.target.id==='plCommentText'&&S.openDetail){
+    commentDrafts.set(draftKey(S.openDetail),{text:e.target.value,start:e.target.selectionStart,end:e.target.selectionEnd});
+  }
+});
+
 function cardHTML({ t, v }) {
   const done = v.status === 'done';
   const warn = !done && !v.late && v.frac <= 0.25;
   const cls = ['task', done && 'is-done', v.late && 'late'].filter(Boolean).join(' ');
-  let sla;
-  if (done) { const at = doneAt(t, v.ref); sla = `<span class="sla done">${ic('check')}أُنجزت ${at ? whenLabel(at, v.ref) : ''}</span>`; }
-  else if (v.late) sla = `<span class="badge b-late"><span class="dot"></span>متأخرة ${dur(v.ref - t.dueAt)}</span>`;
-  else sla = `<span class="sla ${warn ? 'warn' : ''}">${ic('clock')}متبقي ${dur(v.left)}</span><span class="sla-bar ${warn ? 'warn' : ''}" style="--f:${v.frac.toFixed(3)}" aria-hidden="true"><i></i></span><span>حتى ${whenLabel(t.dueAt, v.ref)}</span>`;
+
   const carry = v.carry > 0 && !done ? `<span class="badge b-carry">${carryText(v.carry)}</span>` : '';
   const urgent = t.priority === 'urgent' && !done ? `<span class="badge b-urgent">${ic('flag')}عاجلة</span>` : '';
   const people = t.assignees.length ? avStack(t.assignees) : '<span class="team-chip">الفريق كامل</span>';
@@ -2714,9 +2918,10 @@ function cardHTML({ t, v }) {
       <div class="t-body">
         <div class="t-head"><h3 class="t-title"><button type="button" class="t-link" data-act="open" data-id="${t.id}">${esc(t.title)}</button></h3>${urgent}</div>
         ${t.desc ? `<p class="t-desc">${esc(t.desc)}</p>` : ''}
-        <div class="t-meta">${sla}${carry}</div>
+        ${carry ? `<div class="t-meta">${carry}</div>` : ''}
       </div>
     </div>
+    ${countdownHTML(t,v)}
     <div class="t-foot">${people}<span class="spacer"></span>${start}</div>
   </article>`;
 }
@@ -2761,7 +2966,7 @@ function rowHTML(t) {
     <td>${people}</td>
     <td class="c-date"><b>${dateLabel(t.createdAt)}</b><span>${fTime.format(t.createdAt)}</span></td>
     <td class="c-date"><b>${dateLabel(t.dueAt)}</b><span>${fTime.format(t.dueAt)}</span></td>
-    <td class="c-date">${time}</td>
+    <td class="c-date">${countdownHTML(t,null,true)}</td>
     <td>${cd ? daysWord(cd) : '<span class="muted">—</span>'}</td>
     <td class="c-date"><b>${esc(uname(t.updatedBy))}</b><span>${dateLabel(t.updatedAt)}، ${fTime.format(t.updatedAt)}</span></td>
   </tr>`;
@@ -2867,10 +3072,7 @@ function renderDetail() {
     <div class="dlg-b">
       <h2 class="d-title" id="dTitle">${esc(t.title)}</h2>
       ${t.desc ? `<p class="d-desc">${esc(t.desc)}</p>` : ''}
-      <div class="d-sla ${cc}" style="--f:${v.frac.toFixed(3)}">
-        <div class="d-sla-row"><span class="sla ${cc}">${ic(done ? 'check' : 'clock')}${ctext}</span><span>${carry > 0 && !done ? carryText(carry) : ''}</span></div>
-        <div class="d-sla-bar" aria-hidden="true"><i></i></div>
-      </div>
+      ${countdownHTML(t)}
       <dl class="facts">
         <div class="fact"><dt>أنشأها</dt><dd>${esc(uname(t.createdBy))}</dd></div>
         <div class="fact"><dt>وقت الإنشاء</dt><dd>${fDateTime.format(t.createdAt)}</dd></div>
@@ -3281,7 +3483,12 @@ function tick() {
     if (S.ribbonEnd === S.today) S.ribbonEnd = t;
     S.today = t;
   }
-  if (S.me) render();
+  if (S.me) {
+    const field=document.activeElement;
+    const writing=field && (['INPUT','TEXTAREA','SELECT'].includes(field.tagName)||field.isContentEditable);
+    if(!document.querySelector('dialog[open]')&&!writing)render();
+    else updateCountdownElements();
+  }
 }
 
 /* ========= الأحداث ========= */
@@ -3466,22 +3673,89 @@ const TaskPlus = (() => {
     const now=Date.now(); const h={...event,eid:rid(),at:now,by:S.me.id};
     await S.store.updateTask(hubId,{updatedAt:now,updatedBy:S.me.id},h);
   }
-  async function ensureHub(){
-    if(!isMgr()||X.hub||X.createHubBusy)return;
-    X.createHubBusy=true;
-    try{const now=Date.now();await createRecord({recordType:'portal',title:'سجل دليل الهواتف',desc:'بيانات داخلية؛ لا يدرج الدليل في شفرة HTML العامة',assignees:[],status:'open',priority:'normal',createdAt:now,createdBy:S.me.id,dueAt:now+86400000,completedAt:null,updatedAt:now,updatedBy:S.me.id,history:[]},hubId);}
-    catch(e){console.warn('portal initialization:',e);}
-    finally{X.createHubBusy=false;}
-  }
-  function buildDirectory(){
-    const items=new Map();
-    for(const h of X.hub?.history||[]){
-      if(h.type==='phone_import' && Array.isArray(h.items))for(const r of h.items){if(r?.id)items.set(r.id,{...r});}
-      if(h.type==='phone_put' && h.entry?.id)items.set(h.entry.id,{...h.entry});
+  // Seed data are intentionally embedded with the owner's approval.
+  const PHONE_SEED_VERSION='phone-directory-embedded-2026-11-v1';
+  const PHONE_SEED=JSON.parse(document.getElementById('embedded-phone-directory').textContent);
+  const phoneSeedExists=hub=>(hub?.history||[]).some(h=>h.type==='phone_seed');
+  function phoneSeedEvent(){return {type:'phone_seed',version:PHONE_SEED_VERSION,items:PHONE_SEED.map(e=>({...e})),eid:PHONE_SEED_VERSION,at:Date.now(),by:S.me.id};}
+  function directoryFromHistory(history=[]) {
+    const seedEvent=history.find(h=>h.type==='phone_seed'&&Array.isArray(h.items));
+    const seed=seedEvent?seedEvent.items:PHONE_SEED;
+    const originalById=new Map(PHONE_SEED.map(e=>[e.id,e]));
+    const items=new Map(seed.map(e=>[e.id,{...e,_revision:'seed:'+e.id}]));
+    const apply=(r,h)=>{
+      if(!r?.id)return;
+      const original=originalById.get(r.id)||{},prior=items.get(r.id)||{};
+      items.set(r.id,{...original,...prior,...r,
+        _revision:h.eid||`${h.type}:${h.at||0}:${h.by||''}`,
+        _editedAt:h.type==='phone_put'?+h.at||0:prior._editedAt||0,
+        _editedBy:h.type==='phone_put'?h.by||'':prior._editedBy||''});
+    };
+    // Seed is the baseline, never a replacement for existing edits/deletions.
+    for(const h of history){
+      if(h.type==='phone_import'&&Array.isArray(h.items))h.items.forEach(r=>apply(r,h));
+      if(h.type==='phone_put')apply(h.entry,h);
       if(h.type==='phone_del')items.delete(h.entryId);
     }
-    X.directory=[...items.values()].sort((a,b)=>(+a.seq||0)-(+b.seq||0)||String(a.name).localeCompare(String(b.name),'ar'));
+    return [...items.values()].sort((a,b)=>(+a.seq||0)-(+b.seq||0)||String(a.name).localeCompare(String(b.name),'ar'));
   }
+  function buildDirectory(){X.directory=directoryFromHistory(X.hub?.history||[]);}
+  async function ensureHub(){
+    if(!isMgr()||X.hub||X.createHubBusy||Date.now()<(X.hubRetryAt||0))return;
+    X.createHubBusy=true;
+    try{
+      const now=Date.now();
+      await createRecord({recordType:'portal',title:PC_TEXT.directoryTitle,desc:PC_TEXT.sharedDirectory,
+        assignees:[],status:'open',priority:'normal',createdAt:now,createdBy:S.me.id,
+        dueAt:now+86400000,completedAt:null,updatedAt:now,updatedBy:S.me.id,history:[phoneSeedEvent()]},hubId);
+      X.hubRetryAt=0;
+    }catch(e){X.hubRetryAt=Date.now()+60000;console.warn('Directory initialization:',e);}
+    finally{X.createHubBusy=false;}
+  }
+  async function ensurePhoneSeed(){
+    if(!S.me||!X.hub||phoneSeedExists(X.hub)||X.phoneSeedBusy||Date.now()<(X.phoneSeedRetryAt||0))return;
+    X.phoneSeedBusy=true;
+    const event=phoneSeedEvent();
+    try{
+      if(S.store.mode==='firebase'){
+        const ref=S.store.db.collection(COLL.tasks).doc(hubId);
+        await S.store.db.runTransaction(async tx=>{
+          const snapshot=await tx.get(ref);if(!snapshot.exists||phoneSeedExists(snapshot.data()))return;
+          tx.update(ref,{history:firebase.firestore.FieldValue.arrayUnion(event),updatedAt:event.at,updatedBy:event.by});
+        });
+      }else{
+        const hub=S.store.data.tasks.find(t=>t.id===hubId);
+        if(hub&&!phoneSeedExists(hub))await S.store.updateTask(hubId,{updatedAt:event.at,updatedBy:event.by},event);
+      }
+      X.phoneSeedRetryAt=0;
+    }catch(e){X.phoneSeedRetryAt=Date.now()+60000;console.warn('Directory seed:',e);}
+    finally{X.phoneSeedBusy=false;}
+  }
+  async function writePhoneEvent(event,expectedRevision){
+    if(!S.me||S.me.active===false)throw new Error(PC_TEXT.signInFirst);
+    if(!X.hub){await ensureHub();}
+    if(!X.hub)throw new Error(PC_TEXT.directoryNotReady);
+    const h={...event,eid:rid(),at:Date.now(),by:S.me.id};
+    const validate=hub=>{
+      const id=event.entry?.id||event.entryId;
+      const current=directoryFromHistory(hub.history||[]).find(e=>e.id===id);
+      if(expectedRevision===null&&current)throw new Error(PC_TEXT.concurrentEntry);
+      if(expectedRevision!==null&&current?._revision!==expectedRevision)throw new Error(PC_TEXT.concurrentEntry);
+    };
+    if(S.store.mode==='firebase'){
+      const ref=S.store.db.collection(COLL.tasks).doc(hubId);
+      await S.store.db.runTransaction(async tx=>{
+        const snapshot=await tx.get(ref);
+        if(!snapshot.exists)throw new Error(PC_TEXT.directoryNotReady);
+        validate(snapshot.data());
+        tx.update(ref,{history:firebase.firestore.FieldValue.arrayUnion(h),updatedAt:h.at,updatedBy:h.by});
+      });
+    }else{
+      const hub=S.store.data.tasks.find(t=>t.id===hubId);if(!hub)throw new Error(PC_TEXT.directoryNotReady);
+      validate(hub);await S.store.updateTask(hubId,{updatedAt:h.at,updatedBy:h.by},h);
+    }
+  }
+
   function eventNotice(t,h){
     const targets=[];let text='';
     if(h.type==='create'){targets.push(...t.assignees);text=`أُسندت إليك مهمة: ${t.title}`;}
@@ -3518,6 +3792,7 @@ const TaskPlus = (() => {
   async function addComment(id,text){const t=replaceTask(id);if(!t||!text)return;
     if(!canStatus(t))return toast('إضافة الملاحظات متاحة للمكلفين والمديرين فقط','err');
     const now=Date.now();await S.store.updateTask(id,{updatedAt:now,updatedBy:S.me.id},{type:'comment',eid:rid(),text:text.slice(0,1600),at:now,by:S.me.id});
+    clearCommentDraft(id,text);
     toast('أُضيفت الملاحظة بنجاح');}
 
   function repeatOn(t,d){
@@ -3550,6 +3825,7 @@ const TaskPlus = (() => {
   function queueBackground(){
     if(!S.me)return;
     if(isMgr()&&!X.hub&&!X.createHubBusy)setTimeout(ensureHub,200);
+    if(X.hub&&!phoneSeedExists(X.hub)&&!X.phoneSeedBusy)setTimeout(ensurePhoneSeed,300);
     if(isMgr())setTimeout(makeRepeats,450);
     if(isMgr())setTimeout(applyAcceptedDelegations,650);
   }
@@ -3614,15 +3890,41 @@ const TaskPlus = (() => {
       return `<article class="pl-project-card"><div class="pl-project-head"><span class="pl-project-icon">${ic('folder')}</span>${isMgr()?`<button class="btn sm" data-plus="project-rename" data-id="${esc(p.id)}">تعديل الاسم</button>`:''}</div><h3>${esc(p.name)}</h3><p>${esc(p.desc||'تصنيف ومتابعة المهام المرتبطة بالمشروع')}</p><div class="pl-project-stats"><span>المهام <b>${ts.length}</b></span><span>منجزة <b>${done}</b></span><span class="pl-red">متأخرة <b>${late}</b></span></div><div class="pl-project-bar"><i style="width:${pct}%"></i></div><button class="btn sm" data-plus="project-show" data-id="${esc(p.id)}">عرض مهام المشروع</button></article>`;
     }).join('')}</div>`;
   }
-  function phoneHTML(){
+  function phoneGroups(){
     const q=norm(X.phoneQuery);
     const list=X.directory.filter(e=>!q||norm([e.name,e.ext,e.dept,e.floor,e.note].join(' ')).includes(q));
-    const groupField=X.phoneGrouping;
-    const groups={};for(const e of list){const k=e[groupField]||'غير محدد';(groups[k]||= []).push(e);}
-    return `<div class="pl-phone-toolbar"><div><label for="plPhoneSearch">البحث في التحويلات</label><input id="plPhoneSearch" type="search" placeholder="اسم الموظف أو التحويلة أو القسم" value="${esc(X.phoneQuery)}"></div><div><label for="plPhoneGroup">طريقة العرض</label><select id="plPhoneGroup"><option value="floor" ${groupField==='floor'?'selected':''}>حسب الدور</option><option value="dept" ${groupField==='dept'?'selected':''}>حسب القسم</option></select></div><button class="btn primary" data-plus="phone-new">${ic('phone')} إضافة تحويلة</button><button class="btn" data-plus="phone-export">تصدير CSV</button>${isMgr()?`<button class="btn" data-plus="phone-import">استيراد الدليل المرفق</button>`:''}</div>
-      ${!X.directory.length?`<div class="pl-panel pl-empty">دليل الهواتف فارغ حالياً. حفاظاً على خصوصية الموظفين، لا تُنشر الأسماء داخل ملف GitHub. ${isMgr()?'لإدخال القائمة السابقة اضغط «استيراد الدليل المرفق» واختر ملف هاتف.html مرة واحدة.':'سيظهر الدليل هنا بعد استيراده من المدير.'}</div>`:''}
-      <div class="pl-phone-groups">${Object.entries(groups).map(([name,entries])=>`<section class="pl-panel"><header class="pl-phone-head"><h3>${esc(name)}</h3><span>${entries.length} تحويلة</span></header><div class="pl-phone-list">${entries.map(e=>`<div class="pl-phone-row"><button data-plus="phone-copy" data-ext="${esc(e.ext)}" title="نسخ رقم التحويلة"><strong dir="ltr">${esc(e.ext)}</strong></button><div><b dir="auto">${esc(e.name)}</b><small>${esc(e.dept)} · ${esc(e.floor)}${e.note?' · '+esc(e.note):''}</small></div><button class="btn sm" data-plus="phone-edit" data-id="${esc(e.id)}">تعديل</button></div>`).join('')}</div></section>`).join('')}</div>`;
+    const groups=new Map();
+    for(const e of list){const k=e[X.phoneGrouping]||PC_TEXT.unspecified;if(!groups.has(k))groups.set(k,[]);groups.get(k).push(e);}
+    let result=[...groups.entries()];
+    if(X.phoneGrouping==='floor'){
+      const order=name=>Math.min(...X.directory.filter(e=>e.floor===name).map(e=>Number(e.floorOrder)||9999));
+      result.sort((a,b)=>order(a[0])-order(b[0]));
+    }
+    return {list,groups:result};
   }
+  function phoneHTML(){
+    const {list,groups}=phoneGroups(),field=X.phoneGrouping;
+    return `<div class="pl-directory-summary"><div><strong>${PC_TEXT.directoryTitle}</strong><p>${PC_TEXT.directoryIntro}</p></div><span class="pl-directory-count"><b>${X.directory.length}</b><small>${PC_TEXT.extensions}</small></span></div>
+      <div class="pl-phone-toolbar"><div><label for="plPhoneSearch">${PC_TEXT.phoneSearch}</label><input id="plPhoneSearch" type="search" placeholder="${PC_TEXT.searchPlaceholder}" value="${esc(X.phoneQuery)}"></div>
+      <div><label for="plPhoneGroup">${PC_TEXT.groupBy}</label><select id="plPhoneGroup"><option value="floor" ${field==='floor'?'selected':''}>${PC_TEXT.byFloor}</option><option value="dept" ${field==='dept'?'selected':''}>${PC_TEXT.byDepartment}</option></select></div>
+      <button class="btn primary" data-plus="phone-new">${ic('phone')} ${PC_TEXT.addExtension}</button><button class="btn" data-plus="phone-print">${PC_TEXT.print}</button><button class="btn" data-plus="phone-export">${PC_TEXT.exportCSV}</button></div>
+      ${!list.length?`<div class="pl-panel pl-empty">${X.phoneQuery?PC_TEXT.noMatches:PC_TEXT.directoryEmpty}</div>`:''}
+      <div class="pl-phone-groups">${groups.map(([name,entries])=>`<section class="pl-panel"><header class="pl-phone-head"><h3>${esc(name)}</h3><span>${entries.length} ${PC_TEXT.extensions}</span></header><div class="pl-phone-list">${entries.map(e=>`<div class="pl-phone-row" data-phone-id="${esc(e.id)}"><button class="pl-phone-copy" data-plus="phone-copy" data-ext="${esc(e.ext)}" title="${PC_TEXT.copyNumber}"><strong dir="ltr">${esc(e.ext)}</strong></button><div><b dir="auto" class="pl-phone-name">${esc(e.name)}</b><small>${esc(e.dept)} \u00b7 ${esc(e.floor)}${e.note?' \u00b7 '+esc(e.note):''}</small>${e._editedAt?`<small class="pl-phone-updated">${PC_TEXT.lastEdit}: ${esc(uname(e._editedBy))} \u00b7 ${fDateTime.format(e._editedAt)}</small>`:''}</div><button class="btn sm" data-plus="phone-edit" data-id="${esc(e.id)}">${PC_TEXT.edit}</button></div>`).join('')}</div></section>`).join('')}</div>`;
+  }
+  function printPhoneDirectory(){
+    const {groups,list}=phoneGroups();
+    let box=document.getElementById('plPhonePrintView');
+    if(!box){box=document.createElement('section');box.id='plPhonePrintView';document.body.appendChild(box);}
+    box.innerHTML=`<h1>${PC_TEXT.directoryTitle}</h1><p>${PC_TEXT.company} \u00b7 ${list.length} ${PC_TEXT.extensions} \u00b7 ${fDate.format(Date.now())}${X.phoneQuery?' \u00b7 '+esc(X.phoneQuery):''}</p>`+groups.map(([name,items])=>`<section class="pc-print-group"><h2>${esc(name)}</h2><table><thead><tr><th>${PC_TEXT.name}</th><th>${PC_TEXT.extension}</th><th>${PC_TEXT.department}</th><th>${PC_TEXT.location}</th><th>${PC_TEXT.note}</th></tr></thead><tbody>${items.map(e=>`<tr><td dir="auto">${esc(e.name)}</td><td>${esc(e.ext)}</td><td>${esc(e.dept)}</td><td>${esc(e.floor)}</td><td>${esc(e.note||'')}</td></tr>`).join('')}</tbody></table></section>`).join('');
+    document.body.classList.add('pc-print-phones');
+    window.print();
+  }
+  window.addEventListener('afterprint',()=>document.body.classList.remove('pc-print-phones'));
+  async function copyPhoneNumber(ext){
+    try{await navigator.clipboard.writeText(ext);toast(PC_TEXT.copied);}
+    catch(e){await ask({title:PC_TEXT.extension,body:PC_TEXT.copyManually,ok:PC_TEXT.close,input:{label:PC_TEXT.extension,value:ext}});}
+  }
+
   function archiveHTML(){
     return `<div class="pl-panel">${X.archived.length?X.archived.map(t=>`<div class="pl-archive-row"><div><b>${esc(t.title)}</b><small>${esc(projectName(t.projectId))} · ${fDateTime.format(t.archivedAt||t.updatedAt)}</small></div><div><button class="btn sm" data-plus="archive-restore" data-id="${esc(t.id)}">استرجاع</button><button class="btn sm danger" data-plus="archive-delete" data-id="${esc(t.id)}">حذف نهائي</button></div></div>`).join(''):'<p class="pl-empty">لا توجد مهام مؤرشفة.</p>'}</div>`;
   }
@@ -3728,15 +4030,32 @@ const TaskPlus = (() => {
     try{await S.store.updateTask(id,{name,title:name,updatedAt:Date.now(),updatedBy:S.me.id},{type:'edit',by:S.me.id,at:Date.now()});toast('تم التعديل');}catch(e){toast(errText(e),'err');}
   }
 
-  function openPhoneEditor(id=null){X.editPhone=id;
-    const p=X.directory.find(x=>x.id===id);for(const k of ['name','ext','dept','floor','note'])$('#pl_'+k).value=p?.[k]||'';
-    $('#plPhoneTitle').textContent=p?'تعديل التحويلة':'إضافة تحويلة';$('#plPhoneError').textContent='';$('#plPhoneDelete').hidden=!p;$('#plPhoneDlg').showModal();
+  function openPhoneEditor(id=null){
+    X.editPhone=id;const p=X.directory.find(x=>x.id===id);
+    X.editPhoneRevision=p?._revision||null;
+    for(const k of ['name','ext','dept','floor','note'])$('#pl_'+k).value=p?.[k]||'';
+    $('#plPhoneTitle').textContent=p?PC_TEXT.editExtension:PC_TEXT.addExtension;
+    $('#plPhoneError').textContent='';$('#plPhoneDelete').hidden=!p;
+    const info=$('#plPhoneModified');
+    info.textContent=p?._editedAt?`${PC_TEXT.lastEdit}: ${uname(p._editedBy)} - ${fDateTime.format(p._editedAt)}`:PC_TEXT.originalEntry;
+    info.hidden=!p;
+    $('#plPhoneDlg').showModal();
   }
-  async function savePhone(e){e.preventDefault();const entry={id:X.editPhone||rid(),seq:X.directory.find(x=>x.id===X.editPhone)?.seq||Date.now()};
+  async function savePhone(e){
+    e.preventDefault();
+    const form=e.target,btn=form.querySelector('[type="submit"]');if(btn.disabled)return;
+    const old=X.directory.find(x=>x.id===X.editPhone);
+    const entry={id:X.editPhone||rid(),seq:old?.seq||Date.now()};
     for(const k of ['name','ext','dept','floor','note'])entry[k]=$('#pl_'+k).value.trim();
-    if(!entry.name||!entry.ext)return $('#plPhoneError').textContent='الاسم ورقم التحويلة مطلوبان.';
-    try{await hubEvent({type:'phone_put',entry});$('#plPhoneDlg').close();toast('حُفظت التحويلة في Firebase لجميع المستخدمين');}catch(x){$('#plPhoneError').textContent=errText(x);}
+    if(!entry.name||!entry.ext){$('#plPhoneError').textContent=PC_TEXT.nameAndExtension;return;}
+    entry.floorOrder=old?.floor===entry.floor&&old?.floorOrder?old.floorOrder:
+      X.directory.find(x=>x.floor===entry.floor&&x.floorOrder)?.floorOrder||Math.max(0,...X.directory.map(x=>+x.floorOrder||0))+1;
+    btn.disabled=true;form.setAttribute('aria-busy','true');$('#plPhoneError').textContent='';
+    try{await writePhoneEvent({type:'phone_put',entry},X.editPhoneRevision);$('#plPhoneDlg').close();toast(PC_TEXT.savedForTeam);}
+    catch(x){$('#plPhoneError').textContent=errText(x);}
+    finally{btn.disabled=false;form.removeAttribute('aria-busy');}
   }
+
   async function importPhone(file){if(!file||!isMgr())return;
     try{const raw=await file.text();let list;
       if(file.name.toLowerCase().endsWith('.json'))list=JSON.parse(raw);
@@ -3825,12 +4144,13 @@ const TaskPlus = (() => {
       if(act==='project-show'){X.projectFilter=id;setView('log');}
       if(act==='phone-new')openPhoneEditor();
       if(act==='phone-edit')openPhoneEditor(id);
-      if(act==='phone-copy'){await navigator.clipboard.writeText(b.dataset.ext||'');toast('نُسخ رقم التحويلة');}
+      if(act==='phone-copy')await copyPhoneNumber(b.dataset.ext||'');
+      if(act==='phone-print')printPhoneDirectory();
       if(act==='phone-export')exportPhone();
       if(act==='phone-delete'){
         const row=X.directory.find(x=>x.id===X.editPhone);
         if(row&&await ask({title:'حذف تحويلة',body:`هل تريد حذف تحويلة «${row.name}»؟`,ok:'حذف التحويلة',danger:true})){
-          await hubEvent({type:'phone_del',entryId:row.id});$('#plPhoneDlg').close();toast('حُذفت التحويلة');
+          await writePhoneEvent({type:'phone_del',entryId:row.id},X.editPhoneRevision);$('#plPhoneDlg').close();toast('حُذفت التحويلة');
         }
       }
       if(act==='phone-import')$('#plPhoneFile').click();
@@ -3890,6 +4210,26 @@ const TaskPlus = (() => {
   return {X};
 })();
 
+
+/* Retain unfinished comments and focus across live data refreshes. */
+const renderDetailWithExtras=renderDetail;
+renderDetail=function(){
+  const previousForm=document.getElementById('plCommentForm');
+  const previous=document.getElementById('plCommentText');
+  const previousId=previousForm?.dataset.id;
+  const editing=previous&&document.activeElement===previous;
+  const scroll=document.querySelector('#detailBody .dlg-b')?.scrollTop||0;
+  if(previous&&previousId)commentDrafts.set(draftKey(previousId),{text:previous.value,start:previous.selectionStart,end:previous.selectionEnd});
+  renderDetailWithExtras();
+  const current=document.getElementById('plCommentText');
+  const draft=commentDrafts.get(draftKey(S.openDetail));
+  if(current&&draft){current.value=draft.text;if(editing&&previousId===S.openDetail){current.focus({preventScroll:true});current.setSelectionRange(draft.start,draft.end);}}
+  if(previousId===S.openDetail){const pane=document.querySelector('#detailBody .dlg-b');if(pane)pane.scrollTop=scroll;}
+  updateCountdownElements();
+};
+const authWithExtras=onAuth;
+onAuth=function(u,msg){if(!u||(S.me&&S.me.id!==u.id)){commentDrafts.clear();document.getElementById('detailBody').replaceChildren();}return authWithExtras(u,msg);};
+
 /* ========= التشغيل ========= */
 (async function boot() {
   document.title = CONFIG.appTitle;
@@ -3912,6 +4252,7 @@ const TaskPlus = (() => {
     $('#loginErr').textContent = errText(e);
   }
   setInterval(tick, 30000);
+  resumeCountdownClock();
 })();
 </script>
 </body>
