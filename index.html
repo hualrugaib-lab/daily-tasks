@@ -1726,7 +1726,7 @@ input[type="hidden"] { display:none!important; }
 @media print{.side,.mbar,.pl-phone-toolbar,.pl-bell,.pl-mobile-bell,.pl-day-add{display:none!important}.pl-cal-header{-webkit-print-color-adjust:exact;print-color-adjust:exact}.pl-calendar{break-inside:avoid}.pl-day{min-height:80px}}
 
 </style>
-<meta name="app-build" content="2026-11-01-phone-countdown-1">
+<meta name="app-build" content="2026-11-01-flip-clock-1">
 <style id="phone-countdown-style">
 /* Deadline countdown and embedded shared phone directory, November 2026. */
 .task-countdown{--cd-ink:#4f46c9;--cd-border:#dddaf9;--cd-fill:#6657db;--cd-paper:#f6f5ff;margin-top:14px;padding:12px;border:1px solid var(--cd-border);border-radius:11px;background:var(--cd-paper);color:var(--cd-ink);position:relative;isolation:isolate;font-variant-numeric:tabular-nums}
@@ -1767,6 +1767,80 @@ input[type="hidden"] { display:none!important; }
  #plPhonePrintView .pc-print-group{break-inside:auto;margin-bottom:16px}#plPhonePrintView h2{font-size:14px;break-after:avoid;margin:0 0 7px}
  #plPhonePrintView table{width:100%;border-collapse:collapse;font-size:10px}#plPhonePrintView th,#plPhonePrintView td{border:1px solid #ccc;padding:5px;text-align:right}
  #plPhonePrintView thead{display:table-header-group}#plPhonePrintView tr{break-inside:avoid}
+}
+
+</style>
+<style id="flip-clock-style">
+/* Native split-flap clock. Visual layer only; task dates and storage are unchanged. */
+.task-countdown:not(.cd-compact){
+ --fc-top:#463774;--fc-bottom:#30234f;--fc-label:#281e44;
+ --fc-digit:#fff;--fc-caption:#eee7ff;--fc-edge:#2a1c4b;
+ --fc-h:58px;--fc-size:31px;--fc-duration:660ms;
+ padding:13px 12px 11px;background:linear-gradient(150deg,#fff 0%,var(--cd-paper) 100%);
+ border-radius:13px;box-shadow:0 2px 5px -3px #30204e20;
+}
+.task-countdown.cd-warn{--fc-top:#a65317;--fc-bottom:#763609;--fc-label:#5d2b0b;--fc-edge:#65300b;--fc-caption:#fff0d7}
+.task-countdown.cd-late{--fc-top:#b9334b;--fc-bottom:#871e34;--fc-label:#6c182a;--fc-edge:#731528;--fc-caption:#ffe4e8}
+.task-countdown.cd-done{--fc-top:#1d805f;--fc-bottom:#105740;--fc-label:#0d4636;--fc-edge:#0f4c38;--fc-caption:#ddfff0}
+.task-countdown.cd-unknown{--fc-top:#626a7b;--fc-bottom:#404858;--fc-label:#353d4c;--fc-edge:#394153;--fc-caption:#edf1f8}
+.cd-grid.fc-grid{direction:ltr;gap:7px;align-items:start;margin-top:3px}
+.fc-unit{min-width:0;border-radius:9px;box-shadow:0 3px 6px -2px #25113d3d,0 1px 0 #ffffff80;position:relative;isolation:isolate}
+.fc-rotor{position:relative;display:block;height:var(--fc-h);min-width:0;perspective:500px;isolation:isolate;border-radius:9px 9px 0 0;background:var(--fc-bottom);color:var(--fc-digit);direction:ltr;font-variant-numeric:tabular-nums}
+.fc-face{display:block;position:absolute;inset-inline:0;height:50%;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform-style:flat;box-sizing:border-box}
+.fc-face.fc-top{top:0;background:linear-gradient(150deg,#ffffff10,transparent 70%),var(--fc-top);border-radius:9px 9px 0 0;box-shadow:inset 0 1px 0 #ffffff26}
+.fc-face.fc-bottom{bottom:0;background:linear-gradient(0deg,#00000012,transparent 85%),var(--fc-bottom);box-shadow:inset 0 1px 0 #ffffff0d}
+.fc-digit{display:flex;align-items:center;justify-content:center;width:100%;height:var(--fc-h);padding-inline:1px;color:var(--fc-digit);font-family:"Segoe UI",Tahoma,Arial,sans-serif;font-size:var(--fc-size);font-weight:750;line-height:1;letter-spacing:-.035em;text-shadow:0 1px 2px #00000024;font-variant-numeric:tabular-nums;user-select:none;-webkit-font-smoothing:antialiased}
+.fc-face.fc-bottom .fc-digit{transform:translateY(-50%)}
+.fc-rotor[data-fc-width="3"] .fc-digit{font-size:calc(var(--fc-size)*.79)}
+.fc-rotor[data-fc-width="4"] .fc-digit{font-size:calc(var(--fc-size)*.63)}
+.fc-rotor[data-fc-width="5"] .fc-digit{font-size:calc(var(--fc-size)*.5)}
+.fc-leaf{visibility:hidden;pointer-events:none}
+.fc-leaf-top{z-index:4;transform-origin:center bottom;transform:rotateX(0deg)}
+.fc-leaf-bottom{z-index:5;transform-origin:center top;transform:rotateX(90deg)}
+.fc-seam{pointer-events:none;position:absolute;top:50%;inset-inline:0;height:1px;background:#09031665;box-shadow:0 1px 0 #ffffff12;z-index:7}
+.fc-pin{position:absolute;top:calc(50% - 4px);height:8px;width:3px;border-radius:3px;background:linear-gradient(90deg,#7b7890,#d9d5e5,#79748a);box-shadow:0 0 1px #00000080;z-index:8;pointer-events:none}
+.fc-pin-left{left:1px}.fc-pin-right{right:1px}
+.fc-caption{height:22px;display:flex;align-items:center;justify-content:center;padding:0 2px 3px;background:var(--fc-label);color:var(--fc-caption);font-family:var(--font);font-size:10px;font-weight:500;line-height:1.3;border-radius:0 0 9px 9px;border-bottom:1px solid var(--fc-edge);direction:rtl}
+.fc-running .fc-leaf{visibility:visible}
+.fc-running .fc-leaf-top{animation:fc-fold-top 300ms cubic-bezier(.42,0,1,1) both}
+.fc-running .fc-leaf-bottom{animation:fc-fold-bottom 360ms cubic-bezier(.16,.65,.28,1) 300ms both}
+@keyframes fc-fold-top{0%{transform:rotateX(0deg);filter:brightness(1)}100%{transform:rotateX(-90deg);filter:brightness(.68)}}
+@keyframes fc-fold-bottom{0%{transform:rotateX(90deg);filter:brightness(.65)}75%{filter:brightness(.95)}100%{transform:rotateX(0deg);filter:brightness(1)}}
+.fc-gauge{display:flex;align-items:center;gap:9px;margin-top:13px;direction:rtl}
+.fc-gauge .cd-track{flex:1;min-width:20px;height:5px;margin:0;background:var(--cd-border)}
+.fc-gauge .cd-track i{transition:width 600ms linear,background-color 180ms ease}
+.fc-gauge-label{flex:none;font-size:10px;font-weight:600;line-height:1.4;white-space:nowrap;color:var(--cd-ink);font-variant-numeric:tabular-nums}
+.task-countdown:not(.cd-compact) .cd-due{margin-top:9px;font-size:10px}
+.task-countdown:not(.cd-compact) .cd-sub{margin-top:9px}
+#dlgDetail .task-countdown:not(.cd-compact){--fc-h:76px;--fc-size:43px;padding:17px 18px 14px;margin:19px 0}
+#dlgDetail .fc-grid{gap:12px;max-width:470px;margin-inline:auto}
+#dlgDetail .fc-caption{height:25px;font-size:12px}
+#dlgDetail .fc-gauge{margin-top:16px}
+#dlgDetail .fc-gauge-label{font-size:11px}
+#dlgDetail .task-countdown:not(.cd-compact) .cd-due{font-size:11px}
+@media(min-width:961px) and (max-width:1190px){
+ .task-countdown:not(.cd-compact){--fc-h:50px;--fc-size:25px;padding-inline:9px}
+ .fc-grid.cd-grid{gap:5px}.fc-caption{font-size:9px;height:21px}
+}
+@media(max-width:640px){
+ .task-countdown:not(.cd-compact){--fc-h:60px;--fc-size:33px;padding:13px 12px 12px}
+ .fc-caption{font-size:11px;height:23px}
+ #dlgDetail .task-countdown:not(.cd-compact){--fc-h:64px;--fc-size:35px;padding:14px 12px 12px}
+ #dlgDetail .fc-grid{gap:7px}#dlgDetail .fc-caption{font-size:11px;height:23px}
+}
+@media(max-width:360px){
+ .task-countdown:not(.cd-compact){--fc-h:51px;--fc-size:28px;padding-inline:9px}
+ .fc-grid.cd-grid{gap:5px}.fc-gauge-label{font-size:9px}
+ #dlgDetail .task-countdown:not(.cd-compact){--fc-h:53px;--fc-size:29px}
+}
+@media(prefers-reduced-motion:reduce){
+ .fc-leaf{display:none!important}.fc-gauge .cd-track i{transition:none!important}
+}
+@media print{
+ .fc-leaf{display:none!important}
+ .fc-rotor,.fc-caption,.fc-face{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ .fc-unit{box-shadow:none;break-inside:avoid}
+ .fc-gauge .cd-track i{transition:none!important}
 }
 
 </style>
@@ -2840,33 +2914,102 @@ function countdownFullText(state) {
   const p=countdownParts(state.seconds);
   return `${state.label}${state.sub?' - '+state.sub:''}: ${p[0]} ${PC_TEXT.days}, ${p[1]} ${PC_TEXT.hours}, ${p[2]} ${PC_TEXT.minutes}, ${p[3]} ${PC_TEXT.seconds}`;
 }
+/* Split-flap presentation. All timestamps, permissions and Firebase writes stay unchanged. */
+const flipMotionPreference=window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+const flipAnimations=new WeakMap();
+function flipUnitHTML(value,index,label) {
+  const text=pad(value), width=Math.min(5,text.length);
+  const face=(className,part)=>`<span class="fc-face ${className}"><span class="fc-digit" data-fc-face="${part}">${text}</span></span>`;
+  return `<div class="fc-unit"><span class="fc-rotor" data-cd-unit="${index}" data-fc-value="${text}" data-fc-width="${width}">
+    ${face('fc-top fc-base','top')}${face('fc-bottom fc-base','bottom')}
+    ${face('fc-top fc-leaf fc-leaf-top','old')}${face('fc-bottom fc-leaf fc-leaf-bottom','next')}
+    <i class="fc-seam"></i><i class="fc-pin fc-pin-left"></i><i class="fc-pin fc-pin-right"></i>
+    </span><span class="fc-caption">${label}</span></div>`;
+}
+function settleFlip(unit,value=unit?.dataset.fcValue) {
+  if(!unit)return;
+  const run=flipAnimations.get(unit);
+  if(run){clearTimeout(run.timer);unit.removeEventListener('animationend',run.end);flipAnimations.delete(unit);}
+  if(value!=null){
+    unit.querySelectorAll('[data-fc-face]').forEach(n=>{if(n.textContent!==value)n.textContent=value;});
+    unit.dataset.fcValue=value;
+    unit.dataset.fcWidth=String(Math.min(5,value.length));
+  }
+  unit.classList.remove('fc-running');
+}
+function setFlipValue(unit,value,animate=true) {
+  if(!unit)return;
+  if(!unit.classList.contains('fc-rotor')){if(unit.textContent!==value)unit.textContent=value;return;}
+  const previous=unit.dataset.fcValue;
+  if(previous===value){if(!animate)settleFlip(unit,value);return;}
+  if(!animate || document.hidden || flipMotionPreference?.matches || !unit.isConnected || previous==null){settleFlip(unit,value);return;}
+  const wasRunning=flipAnimations.has(unit);
+  settleFlip(unit,previous);
+  const top=unit.querySelector('[data-fc-face="top"]');
+  const bottom=unit.querySelector('[data-fc-face="bottom"]');
+  const oldFace=unit.querySelector('[data-fc-face="old"]');
+  const newFace=unit.querySelector('[data-fc-face="next"]');
+  if(!top||!bottom||!oldFace||!newFace){settleFlip(unit,value);return;}
+  top.textContent=value;bottom.textContent=previous;oldFace.textContent=previous;newFace.textContent=value;
+  unit.dataset.fcValue=value;unit.dataset.fcWidth=String(Math.min(5,value.length));
+  // Only a rapidly interrupted flap needs a layout flush to restart its animation.
+  if(wasRunning)void unit.offsetHeight;
+  const run={timer:null,end:null};
+  const finish=()=>{if(flipAnimations.get(unit)===run)settleFlip(unit,value);};
+  run.end=e=>{if(e.target.classList.contains('fc-leaf-bottom') && e.animationName==='fc-fold-bottom')finish();};
+  unit.addEventListener('animationend',run.end);
+  flipAnimations.set(unit,run);
+  unit.classList.add('fc-running');
+  // Fallback handles canceled animations, removed cards and background tabs.
+  run.timer=setTimeout(finish,800);
+}
+function settleAllFlips() {
+  document.querySelectorAll('.fc-rotor.fc-running').forEach(n=>settleFlip(n));
+}
+function flipProgressLabel(state) {
+  if(state.tone==='done')return PC_TEXT.done;
+  if(state.tone==='late')return '\u0627\u0646\u062a\u0647\u062a \u0627\u0644\u0645\u0647\u0644\u0629';
+  if(state.tone==='unknown')return PC_TEXT.noDue;
+  return `${Math.ceil(state.progress)}% \u0645\u062a\u0628\u0642\u064d`;
+}
 function countdownHTML(t, view=null, compact=false) {
   const d=countdownData(t,view),st=countdownState(d),parts=countdownParts(st.seconds);
   const tokens=[PC_TEXT.days,PC_TEXT.hours,PC_TEXT.minutes,PC_TEXT.seconds];
   const icon=st.tone==='done'?'check':'clock';
   const until=Number.isFinite(d.due)&&d.due>0?fDateTime.format(d.due):PC_TEXT.noDue;
   const short=`${parts[0]}${PC_TEXT.shortDay} ${pad(parts[1])}:${pad(parts[2])}:${pad(parts[3])}`;
-  return `<div class="task-countdown cd-${st.tone}${compact?' cd-compact':''}" data-countdown data-cd-id="${esc(t.id)}" data-cd-due="${d.due}" data-cd-created="${d.created}" data-cd-done="${d.done?'1':'0'}" data-cd-completed="${d.completed}" data-cd-ref="${d.ref}" role="timer" aria-live="off" aria-label="${esc(countdownFullText(st))}">
+  return `<div class="task-countdown cd-${st.tone}${compact?' cd-compact':''}" data-countdown data-cd-id="${esc(t.id)}" data-cd-due="${d.due}" data-cd-created="${d.created}" data-cd-done="${d.done?'1':'0'}" data-cd-completed="${d.completed}" data-cd-ref="${d.ref}" data-cd-tick="${Date.now()}" role="timer" aria-live="off" aria-label="${esc(countdownFullText(st))}">
     <div class="cd-top"><span class="cd-heading"><span class="cd-icon" aria-hidden="true">${ic(icon)}</span><span data-cd-label>${st.label}</span></span>${d.ref?`<span class="cd-snapshot">${PC_TEXT.snapshot}</span>`:''}</div>
-    ${compact?`<strong class="cd-inline-value" dir="ltr" data-cd-inline>${short}</strong>`:`<div class="cd-grid" aria-hidden="true">${parts.map((n,i)=>`<div class="cd-unit"><b dir="ltr" data-cd-unit="${i}">${pad(n)}</b><small>${tokens[i]}</small></div>`).join('')}</div>`}
+    ${compact?`<strong class="cd-inline-value" dir="ltr" data-cd-inline>${short}</strong>`:`<div class="cd-grid fc-grid" dir="ltr" aria-hidden="true">${parts.map((n,i)=>flipUnitHTML(n,i,tokens[i])).join('')}</div>`}
     <div class="cd-sub" data-cd-sub ${st.sub?'':'hidden'}>${st.sub||''}</div>
-    ${compact?'':`<div class="cd-track" aria-hidden="true"><i data-cd-progress style="width:${st.progress.toFixed(2)}%"></i></div><div class="cd-due"><span>${PC_TEXT.deadline}</span> <b class="iso">${until}</b></div>`}
+    ${compact?'':`<div class="fc-gauge"><span class="fc-gauge-label" data-cd-gauge-label>${flipProgressLabel(st)}</span><div class="cd-track" aria-hidden="true"><i data-cd-progress style="width:${st.progress.toFixed(2)}%"></i></div></div><div class="cd-due"><span>${PC_TEXT.deadline}</span> <b class="iso">${until}</b></div>`}
   </div>`;
 }
-function updateCountdownElements(root=document) {
-  const now=Date.now();
+function updateCountdownElements(root=document,animate=true) {
+  const now=Date.now(), dialog=document.querySelector('dialog[open]');
+  const motion=animate && !document.hidden && !flipMotionPreference?.matches;
   root.querySelectorAll('[data-countdown]').forEach(el=>{
     const ds=el.dataset;
     const d={due:+ds.cdDue,created:+ds.cdCreated,done:ds.cdDone==='1',completed:+ds.cdCompleted,ref:+ds.cdRef};
     const st=countdownState(d,now),p=countdownParts(st.seconds);
     const set=(n,txt)=>{if(n&&n.textContent!==txt)n.textContent=txt;};
-    set(el.querySelector('[data-cd-label]'),st.label);
-    p.forEach((value,i)=>set(el.querySelector(`[data-cd-unit="${i}"]`),pad(value)));
-    set(el.querySelector('[data-cd-inline]'),`${p[0]}${PC_TEXT.shortDay} ${pad(p[1])}:${pad(p[2])}:${pad(p[3])}`);
-    const sub=el.querySelector('[data-cd-sub]');if(sub){set(sub,st.sub||'');sub.hidden=!st.sub;}
-    const progress=el.querySelector('[data-cd-progress]');if(progress)progress.style.width=st.progress.toFixed(2)+'%';
+    // Time comes from the stored deadline, never from a decremented local counter.
+    // After suspension, jump to the real value instead of replaying missed seconds.
+    const recent=!ds.cdTick || Math.abs(now-Number(ds.cdTick))<2500;
+    let visible=false;
+    if(motion && recent && !d.done && !d.ref && st.tone!=='unknown' && (!dialog || dialog.contains(el))){
+      const box=el.getBoundingClientRect();
+      visible=box.width>0 && box.height>0 && box.bottom>0 && box.top<window.innerHeight && box.right>0 && box.left<window.innerWidth;
+    }
+    ds.cdTick=String(now);
     const cls=`task-countdown cd-${st.tone}${el.classList.contains('cd-compact')?' cd-compact':''}`;
     if(el.className!==cls)el.className=cls;
+    set(el.querySelector('[data-cd-label]'),st.label);
+    p.forEach((value,i)=>setFlipValue(el.querySelector(`[data-cd-unit="${i}"]`),pad(value),visible));
+    set(el.querySelector('[data-cd-inline]'),`${p[0]}${PC_TEXT.shortDay} ${pad(p[1])}:${pad(p[2])}:${pad(p[3])}`);
+    set(el.querySelector('[data-cd-gauge-label]'),flipProgressLabel(st));
+    const sub=el.querySelector('[data-cd-sub]');if(sub){set(sub,st.sub||'');sub.hidden=!st.sub;}
+    const progress=el.querySelector('[data-cd-progress]');if(progress)progress.style.width=st.progress.toFixed(2)+'%';
     const label=countdownFullText(st);if(el.getAttribute('aria-label')!==label)el.setAttribute('aria-label',label);
     const card=el.closest('article.task');if(card)card.classList.toggle('late',st.tone==='late');
     const row=el.closest('tr[data-id]');if(row)row.classList.toggle('late-row',st.tone==='late');
@@ -2875,14 +3018,23 @@ function updateCountdownElements(root=document) {
 let countdownClock=null;
 function resumeCountdownClock() {
   clearTimeout(countdownClock);countdownClock=null;
-  if(document.hidden)return;
+  if(document.hidden){settleAllFlips();return;}
   if(S.me)updateCountdownElements();
   countdownClock=setTimeout(resumeCountdownClock,1000-(Date.now()%1000)+15);
 }
-document.addEventListener('visibilitychange',resumeCountdownClock);
-window.addEventListener('pageshow',resumeCountdownClock);
-window.addEventListener('focus',resumeCountdownClock);
-window.addEventListener('pagehide',()=>{clearTimeout(countdownClock);countdownClock=null;});
+function resyncCountdownClock() {
+  settleAllFlips();
+  if(S.me)updateCountdownElements(document,false);
+  resumeCountdownClock();
+}
+document.addEventListener('visibilitychange',resyncCountdownClock);
+window.addEventListener('pageshow',resyncCountdownClock);
+window.addEventListener('focus',resyncCountdownClock);
+window.addEventListener('pagehide',()=>{clearTimeout(countdownClock);countdownClock=null;settleAllFlips();});
+window.addEventListener('beforeprint',()=>{settleAllFlips();if(S.me)updateCountdownElements(document,false);});
+window.addEventListener('afterprint',resyncCountdownClock);
+if(flipMotionPreference?.addEventListener)flipMotionPreference.addEventListener('change',resyncCountdownClock);
+
 /* Draft comments stay in memory for the current user; they are not made public. */
 const commentDrafts=new Map();
 const draftKey=id=>`${S.me?.id||''}:${id}`;
@@ -4231,6 +4383,32 @@ const authWithExtras=onAuth;
 onAuth=function(u,msg){if(!u||(S.me&&S.me.id!==u.id)){commentDrafts.clear();document.getElementById('detailBody').replaceChildren();}return authWithExtras(u,msg);};
 
 /* ========= التشغيل ========= */
+/* Preserve live flap nodes during an unrelated snapshot or periodic redraw.
+   No task fields are modified; form focus and comment drafts keep their existing behavior. */
+function stableCountdownRender(scope,draw) {
+  const root=document.querySelector(scope),pool=new Map();
+  const key=el=>['cdId','cdDue','cdCreated','cdDone','cdCompleted','cdRef'].map(k=>el.dataset[k]).join('|')+'|'+el.classList.contains('cd-compact');
+  if(root)root.querySelectorAll('[data-countdown]').forEach(el=>{
+    const k=key(el);if(!pool.has(k))pool.set(k,[]);pool.get(k).push(el);
+  });
+  const result=draw();
+  const freshRoot=document.querySelector(scope);
+  if(freshRoot){
+    freshRoot.querySelectorAll('[data-countdown]').forEach(el=>{
+      const entries=pool.get(key(el));const previous=entries?.shift();
+      if(previous&&previous!==el)el.replaceWith(previous);
+    });
+    updateCountdownElements(freshRoot);
+  }
+  // Settle only nodes that were genuinely removed, not those re-attached above.
+  for(const entries of pool.values())for(const el of entries)if(!el.isConnected)el.querySelectorAll('.fc-running').forEach(n=>settleFlip(n));
+  return result;
+}
+const drawViewBeforeFlip=renderView;
+renderView=function(){return stableCountdownRender('#view',()=>drawViewBeforeFlip());};
+const drawDetailBeforeFlip=renderDetail;
+renderDetail=function(){return stableCountdownRender('#detailBody',()=>drawDetailBeforeFlip());};
+
 (async function boot() {
   document.title = CONFIG.appTitle;
   $$('.app-title').forEach(el => { el.textContent = CONFIG.appTitle; });
