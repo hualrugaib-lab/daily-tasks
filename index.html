@@ -1696,6 +1696,35 @@ input[type="hidden"] { display:none!important; }
   .kpi.fx-value-changed .kpi-v,.task.flash.is-done {animation:none!important}
 }
 
+/* Executive extensions – responsive single-file UI */
+.pl-bell{position:relative;gap:8px!important;background:linear-gradient(110deg,#f5f3ff,#eff6ff)!important;border-color:#ddd6fe!important;color:#4338ca!important}
+.pl-bell-number{display:inline-grid;place-items:center;min-width:20px;height:20px;border-radius:10px;background:#df3547;color:white;padding:0 5px;font-size:12px}
+.pl-mobile-bell{border:0;background:transparent;color:white;position:relative;padding:6px;display:inline-flex;align-items:center}
+.pl-mobile-bell .i{width:20px;height:20px}.pl-mobile-bell i{position:absolute;top:5px;right:6px;width:7px;height:7px;border-radius:50%;background:#fb7185}
+.pl-inline-project{display:flex;align-items:center;gap:7px;color:var(--text-3);font-size:13px;white-space:nowrap}.pl-inline-project select{width:auto;max-width:170px;min-height:34px}
+.pl-calendar,.pl-panel,.pl-project-card{background:var(--surface);border:1px solid var(--line);box-shadow:var(--sh-xs);border-radius:16px;overflow:hidden}
+.pl-cal-header{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;gap:12px;background:linear-gradient(115deg,#0e766f,#079588);color:white;padding:14px 18px}
+.pl-cal-header strong{text-align:center;font-size:19px}.pl-cal-controls{display:flex;flex-wrap:wrap;align-items:center;gap:6px}.pl-cal-controls:last-child{justify-content:flex-end}
+.pl-cal-controls button,.pl-cal-controls select{width:auto;min-height:34px;border:0;border-radius:9px;padding:7px 10px;background:rgba(255,255,255,.19);color:white;font-weight:600;box-shadow:none}
+.pl-cal-controls select{background:white;color:#065f56}.pl-cal-controls .pl-cal-new{background:#12223f;color:white}
+.pl-cal-days,.pl-cal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));direction:rtl}
+.pl-cal-days span{text-align:center;font-size:12px;font-weight:700;color:#475467;background:#f7f9fc;border:1px solid #e4e9f0;padding:9px 2px}
+.pl-day{position:relative;min-height:125px;border:1px solid #e4e9f0;background:#fff;padding:7px 5px;min-width:0;transition:background .14s ease}
+.pl-day:hover{background:#fafcff}.pl-day.pl-other{background:#f1f4f7;opacity:.72}.pl-day.pl-today{box-shadow:inset 0 0 0 2px #0d9488;background:#f2fdfa}
+.pl-day-head{display:flex;align-items:baseline;justify-content:space-between;gap:4px;color:#435268}.pl-day-head b{font-size:13px}.pl-day-head small{font-size:10px;color:#a0b1c2;overflow:hidden;white-space:nowrap}
+.pl-day-items{display:flex;flex-direction:column;gap:3px;margin-top:9px}.pl-cal-task{width:100%;border:0;border-right:3px solid #0d9488;border-radius:3px;background:#dff7f3;color:#065f54;text-align:right;padding:3px 5px;font-size:10px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer;min-height:23px}
+.pl-cal-task.pl-cal-late{background:#fff0f0;border-color:#e23c46;color:#b42330}.pl-cal-task.pl-cal-done{background:#edfaf1;border-color:#28a36c;color:#128147}.pl-day-add{position:absolute;bottom:3px;left:5px;opacity:0;border:0;border-radius:5px;background:#dcf5f1;color:#0d766d;font-weight:700}.pl-day:hover .pl-day-add,.pl-day-add:focus-visible{opacity:1}
+.pl-cal-panels{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}.pl-panel{padding:18px}.pl-panel>h3{font-size:16px;margin:0 0 14px}.pl-brief-row,.pl-notice{display:flex;flex-direction:column;gap:3px;width:100%;text-align:right;border:0;border-right:3px solid #0d9488;background:none;padding:7px 10px;margin:6px 0;cursor:pointer}.pl-brief-row:hover{background:#f4faf9}.pl-brief-row strong{font-size:13px;color:#08756b}.pl-brief-row span{font-size:12px;color:var(--muted)}
+.pl-project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:16px}.pl-project-card{padding:20px;display:flex;flex-direction:column;gap:12px;min-height:250px}.pl-project-head{display:flex;align-items:center;justify-content:space-between}.pl-project-icon{display:grid;place-items:center;border-radius:10px;width:40px;height:40px;background:#edebff;color:#5346bb}.pl-project-card h3{font-size:18px}.pl-project-card p{color:var(--muted);margin:0;font-size:13px}.pl-project-stats{display:flex;justify-content:space-between;gap:5px;font-size:12px;color:var(--muted)}.pl-project-stats b{display:block;color:var(--text);font-size:16px}.pl-project-stats .pl-red b{color:#cf3043}.pl-project-bar{height:7px;background:#eaecf0;overflow:hidden;border-radius:9px}.pl-project-bar i{display:block;height:100%;background:linear-gradient(90deg,#5c54db,#0d9987);border-radius:inherit}.pl-project-card>button{margin-top:auto;align-self:flex-start}
+.pl-phone-toolbar{display:flex;align-items:flex-end;gap:9px;flex-wrap:wrap;margin-bottom:16px}.pl-phone-toolbar>div{flex:1 1 180px}.pl-phone-toolbar label{display:block;font-size:12px;margin-bottom:4px;color:var(--muted)}.pl-phone-toolbar input,.pl-phone-toolbar select{width:100%}.pl-phone-groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px;align-items:start}.pl-phone-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:10px}.pl-phone-head h3{font-size:16px}.pl-phone-head span{font-size:12px;color:var(--muted)}.pl-phone-row{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding:10px 0}.pl-phone-row:last-child{border:0}.pl-phone-row>button:first-child{background:#f4f3ff;color:#4f46e5;border:0;min-width:55px;padding:10px 6px;border-radius:7px;font-weight:700}.pl-phone-row>div{min-width:0;flex:1}.pl-phone-row b,.pl-phone-row small{display:block;overflow:hidden;text-overflow:ellipsis}.pl-phone-row b{font-size:13px}.pl-phone-row small{font-size:11px;color:var(--muted)}
+.pl-empty{text-align:center;color:var(--muted);padding:28px 12px}.pl-archive-row{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:16px 5px;border-bottom:1px solid var(--line)}.pl-archive-row b,.pl-archive-row small{display:block}.pl-archive-row small{color:var(--muted)}.pl-archive-row>div:last-child{display:flex;gap:6px}
+.pl-details-block{margin:14px 0 24px}.pl-details-block .d-sub{display:flex;align-items:center;gap:6px;margin:20px 0 10px}.pl-details-block .d-sub .i{width:17px;height:17px}.pl-tags{background:#f5f6ff;border:1px solid #e4e5fa;border-radius:7px;padding:11px;color:#4540a2;font-size:13px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}.pl-tags .i{width:14px;height:14px}.pl-comments{display:flex;flex-direction:column;gap:9px}.pl-comment{padding:12px;background:var(--subtle);border:1px solid var(--line);border-radius:9px}.pl-comment>div{display:flex;justify-content:space-between;gap:8px}.pl-comment time{font-size:11px;color:var(--muted)}.pl-comment p{margin:7px 0 0;white-space:pre-wrap;font-size:13px}.pl-details-block form label{display:block;margin:12px 0 5px;font-size:13px}.pl-details-block form button{margin-top:9px}.pl-info{background:#f0f9ff;border:1px solid #b9e1ff;border-radius:7px;padding:10px;font-size:13px}.pl-detail-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.pl-notice{flex-direction:row;align-items:center;justify-content:space-between;cursor:auto;border-right:3px solid #d1d5db}.pl-notice.pl-unread{background:#f5f3ff;border-color:#6858db}.pl-notice small{display:block;color:var(--muted);font-size:12px}.pl-notice b{font-size:13px}
+.pl-calendar .pl-day.pl-today .pl-day-head b{display:grid;place-items:center;border-radius:50%;background:#0f9487;color:white;width:22px;height:22px}
+@media(max-width:800px){.pl-cal-header{grid-template-columns:1fr 1fr}.pl-cal-header>strong{grid-row:1;grid-column:1/-1}.pl-cal-controls{justify-content:center!important}.pl-cal-panels{grid-template-columns:1fr}.pl-day{min-height:95px}.pl-cal-task{font-size:9px}.pl-phone-groups{grid-template-columns:1fr}}
+@media(max-width:560px){.pl-cal-header{padding:12px 9px;gap:7px}.pl-cal-controls{gap:3px}.pl-cal-controls button,.pl-cal-controls select{font-size:11px;padding:4px 6px;min-height:29px}.pl-cal-days span{font-size:10px;padding:6px 0}.pl-day{min-height:74px;padding:3px 2px}.pl-day-head{display:block}.pl-day-head b{font-size:11px}.pl-day-head small{display:block;font-size:8px;max-width:100%}.pl-day-items{margin-top:4px}.pl-cal-task{font-size:8px;min-height:19px;padding:1px 2px}.pl-day-add{display:none}.pl-phone-toolbar>button{flex:1}.pl-phone-row{gap:6px}.pl-archive-row{flex-direction:column;align-items:stretch}.pl-bell span{display:none}}
+@media(prefers-reduced-motion:reduce){.pl-day,.pl-cal-task{transition:none}}
+@media print{.side,.mbar,.pl-phone-toolbar,.pl-bell,.pl-mobile-bell,.pl-day-add{display:none!important}.pl-cal-header{-webkit-print-color-adjust:exact;print-color-adjust:exact}.pl-calendar{break-inside:avoid}.pl-day{min-height:80px}}
+
 </style>
 </head>
 <body>
@@ -1783,7 +1812,7 @@ input[type="hidden"] { display:none!important; }
         <div class="field"><span class="flabel">الموعد النهائي</span><div id="taskDateTimeSlot"></div><p class="field-err" id="fDueErr" role="alert"></p><span class="hint" id="fDueHint">الافتراضي: بعد 24 ساعة من الإنشاء</span></div>
         <div class="field"><span class="flabel">الأولوية</span><label class="check"><input type="checkbox" id="fUrgent">عاجلة</label></div>
       </div>
-      <p id="fErr" class="form-err" role="alert"></p>
+      <div class="row2"><div class="field"><label for="plProjectInput">المشروع</label><select id="plProjectInput"><option value="">مهام عامة</option></select></div><div class="field"><label for="plRepeatInput">تكرار المهمة</label><select id="plRepeatInput"><option value="none">بدون تكرار</option><option value="daily">يومي</option><option value="weekly">أسبوعي</option><option value="monthly">شهري</option></select><span class="hint">التكرار يُنشئ مواعيد للأيام القادمة عند فتح النظام من أحد المديرين.</span></div></div><p id="fErr" class="form-err" role="alert"></p>
     </div>
     <div class="dlg-f">
       <button type="button" class="btn" data-act="close-dlg">إلغاء</button>
@@ -1833,6 +1862,11 @@ input[type="hidden"] { display:none!important; }
     <div class="dlg-f"><button type="button" class="btn" id="cfCancel" data-act="close-dlg">إلغاء</button><button type="submit" class="btn primary" id="cfOk"></button></div>
   </form>
 </dialog>
+
+<dialog id="plusNotices" aria-label="التنبيهات"><div class="dlg-form"><div class="dlg-h"><h2>التنبيهات</h2><button type="button" class="btn icon ghost" data-act="close-dlg" aria-label="إغلاق">×</button></div><div class="dlg-b" id="plusNoticesList"></div><div class="dlg-f"><button type="button" class="btn" data-plus="notice-read">تحديد الكل كمقروء</button><button type="button" class="btn" data-act="close-dlg">إغلاق</button></div></div></dialog>
+<dialog id="plPhoneDlg" aria-labelledby="plPhoneTitle"><form id="plPhoneForm" class="dlg-form"><div class="dlg-h"><h2 id="plPhoneTitle">إضافة تحويلة</h2><button type="button" class="btn icon ghost" data-act="close-dlg" aria-label="إغلاق">×</button></div><div class="dlg-b"><div class="row2"><div class="field"><label for="pl_name">اسم الموظف / الموقع</label><input id="pl_name" required maxlength="120"></div><div class="field"><label for="pl_ext">رقم التحويلة</label><input id="pl_ext" required maxlength="20"></div></div><div class="row2"><div class="field"><label for="pl_dept">الإدارة أو القسم</label><input id="pl_dept" maxlength="120"></div><div class="field"><label for="pl_floor">الموقع / الدور</label><input id="pl_floor" maxlength="120"></div></div><div class="field"><label for="pl_note">ملاحظة</label><input id="pl_note" maxlength="250"></div><p class="form-err" id="plPhoneError"></p></div><div class="dlg-f"><button type="button" class="btn danger" id="plPhoneDelete" data-plus="phone-delete" hidden>حذف التحويلة</button><span class="spacer"></span><button class="btn primary" type="submit">حفظ</button><button type="button" class="btn" data-act="close-dlg">إلغاء</button></div></form></dialog>
+<dialog id="plTransferDlg" aria-labelledby="plTransferTitle"><form id="plTransferForm" class="dlg-form"><div class="dlg-h"><h2 id="plTransferTitle">تفويض المهمة</h2><button type="button" class="btn icon ghost" data-act="close-dlg" aria-label="إغلاق">×</button></div><div class="dlg-b"><input type="hidden" id="plTransferId"><div class="field"><label for="plTransferTo">الموظف المستلم</label><select id="plTransferTo" required></select></div><div class="field"><label for="plTransferReason">سبب التحويل أو الملاحظات</label><textarea id="plTransferReason" maxlength="500" rows="3"></textarea></div><p id="plTransferError" class="form-err"></p><p class="hint">إذا كنت موظفاً، يُرسل طلب لزميلك لقبوله، ثم يكتمل تحويل التكليف عند فتح النظام من أحد المديرين. أما المدير فيستطيع إعادة الإسناد مباشرة.</p></div><div class="dlg-f"><button class="btn primary" type="submit">تأكيد</button><button type="button" class="btn" data-act="close-dlg">إلغاء</button></div></form></dialog>
+<input type="file" id="plPhoneFile" accept=".html,.json" hidden>
 
 <div id="toasts" popover="manual" role="status" aria-live="polite"></div>
 
@@ -3381,6 +3415,480 @@ $('#cfInput').addEventListener('input', () => { if ($('#cfInput').getAttribute('
 window.addEventListener('online', () => { S.offline = false; if (S.me) { renderNotices(); if (S.store.mode === 'firebase') toast('عاد الاتصال وأُرسلت التعديلات'); } });
 window.addEventListener('offline', () => { S.offline = true; if (S.me) renderNotices(); });
 document.addEventListener('visibilitychange', () => { if (!document.hidden) tick(); });
+
+/* ===== Daily Tasks Plus: uses existing dt_tasks collection / Spark plan ===== */
+/* ===== Daily Tasks Plus: uses existing dt_tasks collection / Spark plan ===== */
+const TaskPlus = (() => {
+  'use strict';
+  Object.assign(ICONS, {
+    bell:'<path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/>',
+    phone:'<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"/>',
+    folder:'<path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>',
+    repeat:'<path d="m17 2 4 4-4 4M3 11V9a3 3 0 0 1 3-3h15M7 22l-4-4 4-4m14-1v2a3 3 0 0 1-3 3H3"/>',
+    mail:'<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/>',
+    message:'<path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8A8.5 8.5 0 0 1 8.7 3.9a8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/>',
+    share:'<path d="M12 3v12m-4-4 4 4 4-4M4 18v2h16v-2"/>',
+    archive:'<rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v13h14V8m-9 5h4"/>'
+  });
+  const X = {
+    projects: [], archived: [], hub: null, directory: [], notices: [], firstNotices: true, noticeKeys: new Set(),
+    calendarMonth: new Date(new Date().getFullYear(),new Date().getMonth(),1),
+    phoneQuery:'', phoneGrouping:'floor', projectFilter:'', createHubBusy:false, repeatBusy:false,
+    lastRepeat:0, transferBusy:new Set(), editPhone:null, calendarSelection:null
+  };
+  const hubId = 'system_directory_hub_v1';
+  const projectName = id => X.projects.find(p=>p.id===id)?.name || 'مهام عامة';
+  const allTasks = () => [...S.tasks, ...X.archived];
+  const keyDate = d => {d = new Date(d); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;};
+  const monthDay = (y,m,d) => new Date(y,m,d);
+  const activeUser = id => S.users.find(u=>u.id===id && u.active!==false);
+  const uniq = a => [...new Set((a||[]).filter(Boolean))];
+  const emailFor = id => activeUser(id)?.email || '';
+  const allUsers = () => S.users.filter(u=>u.active !== false);
+  const replaceTask = t => S.tasks.find(x=>x.id===t) || X.archived.find(x=>x.id===t);
+  const readStoreKey = () => 'dailyTasks.notice.read.'+(S.me?.id||'');
+  const readSet = () => {try{return new Set(JSON.parse(localStorage.getItem(readStoreKey()) || '[]'));}catch(e){return new Set();}};
+  function saveRead(ids) {try{localStorage.setItem(readStoreKey(),JSON.stringify([...ids].slice(-800)));}catch(e){}}
+
+  // All new shared information is saved in the existing dt_tasks collection.
+  async function createRecord(data, docId=null) {
+    if(S.store.mode==='firebase'){
+      const col=S.store.db.collection(COLL.tasks);
+      const ref=docId ? col.doc(docId) : col.doc();
+      if(docId){let made=false; await S.store.db.runTransaction(async tx=>{const old=await tx.get(ref);if(!old.exists){tx.set(ref,data);made=true;}}); return made ? ref.id : null;}
+      await ref.set(data); return ref.id;
+    }
+    const id=docId||rid();if(S.store.data.tasks.some(t=>t.id===id))return null;
+    S.store.data.tasks.push({...data,id});S.store.emit();return id;
+  }
+  async function hubEvent(event){
+    if(!X.hub)throw new Error('لم يُجهّز سجل الدليل بعد. افتح النظام بحساب المدير أولاً.');
+    const now=Date.now(); const h={...event,eid:rid(),at:now,by:S.me.id};
+    await S.store.updateTask(hubId,{updatedAt:now,updatedBy:S.me.id},h);
+  }
+  async function ensureHub(){
+    if(!isMgr()||X.hub||X.createHubBusy)return;
+    X.createHubBusy=true;
+    try{const now=Date.now();await createRecord({recordType:'portal',title:'سجل دليل الهواتف',desc:'بيانات داخلية؛ لا يدرج الدليل في شفرة HTML العامة',assignees:[],status:'open',priority:'normal',createdAt:now,createdBy:S.me.id,dueAt:now+86400000,completedAt:null,updatedAt:now,updatedBy:S.me.id,history:[]},hubId);}
+    catch(e){console.warn('portal initialization:',e);}
+    finally{X.createHubBusy=false;}
+  }
+  function buildDirectory(){
+    const items=new Map();
+    for(const h of X.hub?.history||[]){
+      if(h.type==='phone_import' && Array.isArray(h.items))for(const r of h.items){if(r?.id)items.set(r.id,{...r});}
+      if(h.type==='phone_put' && h.entry?.id)items.set(h.entry.id,{...h.entry});
+      if(h.type==='phone_del')items.delete(h.entryId);
+    }
+    X.directory=[...items.values()].sort((a,b)=>(+a.seq||0)-(+b.seq||0)||String(a.name).localeCompare(String(b.name),'ar'));
+  }
+  function eventNotice(t,h){
+    const targets=[];let text='';
+    if(h.type==='create'){targets.push(...t.assignees);text=`أُسندت إليك مهمة: ${t.title}`;}
+    if(h.type==='assign'){targets.push(...(h.to||[]));text=`إسناد جديد: ${t.title}`;}
+    if(h.type==='status'&&h.to==='done'){targets.push(t.createdBy);text=`أُنجزت المهمة: ${t.title}`;}
+    if(h.type==='comment'){targets.push(t.createdBy,...t.assignees);text=`ملاحظة جديدة: ${t.title}`;}
+    if(h.type==='delegate_request'){targets.push(h.to,t.createdBy);text=`طلب تحويل مهمة: ${t.title}`;}
+    if(h.type==='delegate_done'){targets.push(h.to,h.from,t.createdBy);text=`تحويل التكليف: ${t.title}`;}
+    if(h.type==='delegate_reject'){targets.push(h.from,t.createdBy);text=`رُفض تفويض المهمة: ${t.title}`;}
+    if(!text||h.by===S.me?.id||!uniq(targets).includes(S.me?.id))return null;
+    return {id:`${t.id}:${h.eid||h.type+'-'+h.at+'-'+h.by}`,text,taskId:t.id,at:+h.at||t.createdAt,by:h.by};
+  }
+  function buildNotices(){
+    if(!S.me)return;
+    const ns=[];for(const t of allTasks())for(const h of t.history||[]){const n=eventNotice(t,h);if(n)ns.push(n);}
+    X.notices=ns.sort((a,b)=>b.at-a.at).slice(0,250);
+    const keys=new Set(X.notices.map(n=>n.id));
+    if(!X.firstNotices){const fresh=X.notices.filter(n=>!X.noticeKeys.has(n.id) && n.at>=Date.now()-120000);if(fresh.length)toast(fresh[0].text);}
+    X.firstNotices=false;X.noticeKeys=keys;
+  }
+  function bellHTML(){const seen=readSet();const count=X.notices.filter(n=>!seen.has(n.id)).length;return `<button type="button" class="btn pl-bell" data-plus="notices" title="التنبيهات">${ic('bell')}<span>التنبيهات</span>${count?`<b class="pl-bell-number">${count>99?'99+':count}</b>`:''}</button>`;}
+  function decorateBell(){
+    const a=$('#pageHead .page-actions');if(a && !a.querySelector('[data-plus="notices"]'))a.insertAdjacentHTML('afterbegin',bellHTML());
+    const mobile=$('#mbMe');if(mobile){mobile.querySelector('[data-plus="notices"]')?.remove();mobile.insertAdjacentHTML('afterbegin',`<button type="button" class="pl-mobile-bell" data-plus="notices" aria-label="التنبيهات">${ic('bell')}${X.notices.filter(n=>!readSet().has(n.id)).length?'<i></i>':''}</button>`);}
+  }
+  function showNotices(){
+    const seen=readSet();$('#plusNoticesList').innerHTML = X.notices.length ? X.notices.map(n=>`<div class="pl-notice ${seen.has(n.id)?'':'pl-unread'}"><div><b>${esc(n.text)}</b><small>${fDateTime.format(n.at)} · ${esc(uname(n.by))}</small></div><button class="btn sm" data-plus="notice-open" data-id="${esc(n.taskId)}" data-key="${esc(n.id)}">فتح المهمة</button></div>`).join('') : '<div class="pl-empty">لا توجد تنبيهات حتى الآن.</div>';
+    $('#plusNotices').showModal();
+  }
+  function markNotices(){saveRead(new Set(X.notices.map(n=>n.id)));showNoticesListRead();}
+  function showNoticesListRead(){if($('#plusNotices').open)showNoticesInline();decorateBellClean();}
+  function showNoticesInline(){const seen=readSet();$('#plusNoticesList').querySelectorAll('.pl-notice').forEach((el,i)=>{el.classList.toggle('pl-unread',!seen.has(X.notices[i]?.id));});}
+  function decorateBellClean(){document.querySelectorAll('[data-plus="notices"]').forEach(el=>{const n=el.querySelector('.pl-bell-number');if(n)n.remove();const dot=el.querySelector('i');if(dot)dot.remove();});}
+  async function addComment(id,text){const t=replaceTask(id);if(!t||!text)return;
+    if(!canStatus(t))return toast('إضافة الملاحظات متاحة للمكلفين والمديرين فقط','err');
+    const now=Date.now();await S.store.updateTask(id,{updatedAt:now,updatedBy:S.me.id},{type:'comment',eid:rid(),text:text.slice(0,1600),at:now,by:S.me.id});
+    toast('أُضيفت الملاحظة بنجاح');}
+
+  function repeatOn(t,d){
+    const freq=t.repeatMode;if(!freq||freq==='none'||!t.seriesRoot)return false;
+    const anchor=new Date(t.dueAt);const base=new Date(anchor.getFullYear(),anchor.getMonth(),anchor.getDate());
+    if(d.getTime()<base.getTime())return false;
+    if(freq==='daily')return true;
+    if(freq==='weekly')return d.getDay()===base.getDay() && Math.floor((d-base)/604800000)>=0;
+    if(freq==='monthly')return d.getDate()===Math.min(anchor.getDate(),new Date(d.getFullYear(),d.getMonth()+1,0).getDate());
+    return false;
+  }
+  function localOccurrence(t,d){const o=new Date(t.dueAt);return new Date(d.getFullYear(),d.getMonth(),d.getDate(),o.getHours(),o.getMinutes()).getTime();}
+  async function makeRepeats(){
+    if(!S.me||!isMgr()||X.repeatBusy||Date.now()-X.lastRepeat<90000)return;
+    const roots=S.tasks.filter(t=>t.seriesRoot&&t.repeatMode && t.repeatMode!=='none');if(!roots.length)return;
+    X.repeatBusy=true;X.lastRepeat=Date.now();
+    try{const cur=new Date(),today=new Date(cur.getFullYear(),cur.getMonth(),cur.getDate());let made=0;
+      const existing=new Set(allTasks().filter(t=>t.repeatParent).map(t=>t.repeatParent+'|'+t.repeatDate));
+      for(const root of roots){for(let j=0;j<=30&&made<45;j++){
+        const d=new Date(today.getFullYear(),today.getMonth(),today.getDate()+j);const date=keyDate(d);
+        if(!repeatOn(root,d)||date===keyDate(root.dueAt)||existing.has(root.id+'|'+date))continue;
+        const now=Date.now();const id='rec_'+root.id.replace(/[^A-Za-z0-9_-]/g,'').slice(0,40)+'_'+date.replace(/-/g,'');
+        const record={title:root.title,desc:root.desc,assignees:root.assignees,priority:root.priority,
+          projectId:root.projectId||'',createdAt:now,createdBy:root.createdBy,updatedAt:now,updatedBy:S.me.id,dueAt:localOccurrence(root,d),
+          completedAt:null,status:'open',repeatMode:'none',repeatParent:root.id,repeatDate:date,history:[{type:'create',at:now,by:S.me.id}]};
+        if(await createRecord(record,id)){made++;}existing.add(root.id+'|'+date);
+      }}if(made)toast(`أُنشئت ${made} مهام متكررة للمواعيد القادمة`);
+    }catch(e){console.warn('recurrence:',e);}finally{X.repeatBusy=false;}
+  }
+  function queueBackground(){
+    if(!S.me)return;
+    if(isMgr()&&!X.hub&&!X.createHubBusy)setTimeout(ensureHub,200);
+    if(isMgr())setTimeout(makeRepeats,450);
+    if(isMgr())setTimeout(applyAcceptedDelegations,650);
+  }
+
+  // Existing rules allow an assignee to append history, but NOT to change assignees.
+  // A recipient can answer through the shared portal doc; an admin/manager finalizes the transfer.
+  function lastDelegation(t){
+    const requests=(t.history||[]).filter(h=>h.type==='delegate_request');
+    if(!requests.length)return null;const req=requests[requests.length-1];
+    const handled=(t.history||[]).some(h=>['delegate_done','delegate_reject'].includes(h.type)&&h.requestId===req.eid);
+    return handled?null:req;
+  }
+  function delegationReply(req){return (X.hub?.history||[]).filter(h=>h.type==='delegate_reply'&&h.requestId===req.eid).slice(-1)[0]||null;}
+  async function applyAcceptedDelegations(){
+    if(!S.me||!isMgr()||!X.hub)return;
+    for(const t of S.tasks){const req=lastDelegation(t);if(!req||X.transferBusy.has(req.eid))continue;
+      const reply=delegationReply(req);if(!reply)continue;
+      X.transferBusy.add(req.eid);
+      try{const now=Date.now();
+        if(reply.decision==='accept')await S.store.updateTask(t.id,{assignees:[req.to],updatedAt:now,updatedBy:S.me.id},{type:'delegate_done',eid:rid(),at:now,by:S.me.id,to:req.to,from:req.by,requestId:req.eid});
+        else await S.store.updateTask(t.id,{updatedAt:now,updatedBy:S.me.id},{type:'delegate_reject',eid:rid(),at:now,by:S.me.id,to:req.to,from:req.by,requestId:req.eid});
+      }catch(e){console.warn('delegation activation:',e);}finally{X.transferBusy.delete(req.eid);}
+    }
+  }
+  async function requestTransfer(id,to,reason){const t=replaceTask(id);if(!t||!t.assignees.includes(S.me.id)&&!isMgr())return;
+    const now=Date.now();await S.store.updateTask(id,{updatedAt:now,updatedBy:S.me.id},{type:'delegate_request',eid:rid(),at:now,by:S.me.id,to,reason:reason.slice(0,500)});
+  }
+  async function respondTransfer(id,decision){const t=replaceTask(id),r=t&&lastDelegation(t);if(!r||r.to!==S.me.id)return;
+    await hubEvent({type:'delegate_reply',taskId:id,requestId:r.eid,decision});toast(decision==='accept'?'قُبل الطلب؛ سيتم نقل التكليف عند دخول مدير':'رُفض الطلب');
+  }
+
+  function futureEventsForDay(d){
+    const date=keyDate(d);let items=S.tasks.filter(t=>keyDate(t.dueAt)===date).map(t=>({t,due:t.dueAt,virtual:false}));
+    const stored=new Set(items.filter(x=>x.t.repeatParent).map(x=>x.t.repeatParent));
+    for(const r of S.tasks.filter(t=>t.seriesRoot&&t.repeatMode&&t.repeatMode!=='none')){
+      if(keyDate(r.dueAt)!==date && repeatOn(r,d) && !stored.has(r.id))items.push({t:r,due:localOccurrence(r,d),virtual:true});
+    }
+    if(X.projectFilter)items=items.filter(x=>x.t.projectId===X.projectFilter);
+    return items.sort((a,b)=>a.due-b.due);
+  }
+  function calendarHTML(){
+    const base=X.calendarMonth,y=base.getFullYear(),m=base.getMonth(),first=new Date(y,m,1).getDay();
+    const nDays=new Date(y,m+1,0).getDate(),cells=Math.ceil((first+nDays)/7)*7;
+    const hijri=d=>{try{return new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura',{day:'numeric',month:'short'}).format(d);}catch(e){return '';}};
+    const greg=new Intl.DateTimeFormat('ar-SA-u-ca-gregory-nu-latn',{month:'long',year:'numeric'}).format(base);
+    const days=['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
+    let grid='';
+    for(let i=0;i<cells;i++){
+      const d=new Date(y,m,i-first+1),other=d.getMonth()!==m,now=keyDate(d)===keyDate(Date.now());const ev=futureEventsForDay(d);
+      grid+=`<div class="pl-day ${other?'pl-other':''} ${now?'pl-today':''}"><div class="pl-day-head"><b>${d.getDate()}</b><small>${hijri(d)}</small></div><div class="pl-day-items">${ev.slice(0,3).map(x=>`<button data-plus="cal-open" data-id="${esc(x.t.id)}" class="pl-cal-task ${x.t.status==='done'&&!x.virtual?'pl-cal-done':x.due<Date.now()&&!x.virtual?'pl-cal-late':'pl-cal-open'}" title="${esc(x.t.title)}">${x.virtual?'↻ ':''}${esc(x.t.title)}</button>`).join('')}${ev.length>3?`<small>+${ev.length-3} أخرى</small>`:''}</div>${isMgr()&&!other?`<button class="pl-day-add" data-plus="cal-add" data-date="${keyDate(d)}" title="إضافة مهمة">+</button>`:''}</div>`;
+    }
+    const past=S.tasks.filter(t=>t.dueAt<Date.now()).sort((a,b)=>b.dueAt-a.dueAt).slice(0,8);
+    const future=S.tasks.filter(t=>t.dueAt>=Date.now()&&t.status!=='done').sort((a,b)=>a.dueAt-b.dueAt).slice(0,8);
+    const list=(arr,none)=>arr.length?arr.map(t=>`<button class="pl-brief-row" data-plus="cal-open" data-id="${esc(t.id)}"><strong>${esc(t.title)}</strong><span>${fDateTime.format(t.dueAt)} · ${esc(projectName(t.projectId))}</span></button>`).join(''):`<p class="pl-empty">${none}</p>`;
+    return `<div class="pl-calendar"><div class="pl-cal-header"><div class="pl-cal-controls"><button data-plus="cal-prev">◀ السابق</button><button data-plus="cal-today">اليوم</button><button data-plus="cal-next">التالي ▶</button></div><strong>${greg}</strong><div class="pl-cal-controls">${isMgr()?'<button class="pl-cal-new" data-act="new">+ إضافة موعد</button>':''}<select id="plCalYear" aria-label="السنة">${Array.from({length:15},(_,i)=>y-7+i).map(a=>`<option value="${a}" ${a===y?'selected':''}>${a}</option>`).join('')}</select></div></div><div class="pl-cal-days">${days.map(d=>`<span>${d}</span>`).join('')}</div><div class="pl-cal-grid">${grid}</div></div><div class="pl-cal-panels"><section class="pl-panel"><h3>المواعيد القادمة</h3>${list(future,'لا توجد مهام مجدولة قادمة.')}</section><section class="pl-panel"><h3>آخر المواعيد السابقة</h3>${list(past,'لا توجد مواعيد سابقة.')}</section></div>`;
+  }
+  function projectsHTML(){
+    if(!X.projects.length)return '<div class="pl-empty pl-panel">لم تُضف مشاريع بعد. أنشئ أول مشروع لتنظيم المهام.</div>';
+    return `<div class="pl-project-grid">${X.projects.map(p=>{
+      const ts=S.tasks.filter(t=>t.projectId===p.id),done=ts.filter(t=>t.status==='done').length,late=ts.filter(t=>t.status!=='done'&&t.dueAt<Date.now()).length;
+      const pct=ts.length?Math.round(100*done/ts.length):0;
+      return `<article class="pl-project-card"><div class="pl-project-head"><span class="pl-project-icon">${ic('folder')}</span>${isMgr()?`<button class="btn sm" data-plus="project-rename" data-id="${esc(p.id)}">تعديل الاسم</button>`:''}</div><h3>${esc(p.name)}</h3><p>${esc(p.desc||'تصنيف ومتابعة المهام المرتبطة بالمشروع')}</p><div class="pl-project-stats"><span>المهام <b>${ts.length}</b></span><span>منجزة <b>${done}</b></span><span class="pl-red">متأخرة <b>${late}</b></span></div><div class="pl-project-bar"><i style="width:${pct}%"></i></div><button class="btn sm" data-plus="project-show" data-id="${esc(p.id)}">عرض مهام المشروع</button></article>`;
+    }).join('')}</div>`;
+  }
+  function phoneHTML(){
+    const q=norm(X.phoneQuery);
+    const list=X.directory.filter(e=>!q||norm([e.name,e.ext,e.dept,e.floor,e.note].join(' ')).includes(q));
+    const groupField=X.phoneGrouping;
+    const groups={};for(const e of list){const k=e[groupField]||'غير محدد';(groups[k]||= []).push(e);}
+    return `<div class="pl-phone-toolbar"><div><label for="plPhoneSearch">البحث في التحويلات</label><input id="plPhoneSearch" type="search" placeholder="اسم الموظف أو التحويلة أو القسم" value="${esc(X.phoneQuery)}"></div><div><label for="plPhoneGroup">طريقة العرض</label><select id="plPhoneGroup"><option value="floor" ${groupField==='floor'?'selected':''}>حسب الدور</option><option value="dept" ${groupField==='dept'?'selected':''}>حسب القسم</option></select></div><button class="btn primary" data-plus="phone-new">${ic('phone')} إضافة تحويلة</button><button class="btn" data-plus="phone-export">تصدير CSV</button>${isMgr()?`<button class="btn" data-plus="phone-import">استيراد الدليل المرفق</button>`:''}</div>
+      ${!X.directory.length?`<div class="pl-panel pl-empty">دليل الهواتف فارغ حالياً. حفاظاً على خصوصية الموظفين، لا تُنشر الأسماء داخل ملف GitHub. ${isMgr()?'لإدخال القائمة السابقة اضغط «استيراد الدليل المرفق» واختر ملف هاتف.html مرة واحدة.':'سيظهر الدليل هنا بعد استيراده من المدير.'}</div>`:''}
+      <div class="pl-phone-groups">${Object.entries(groups).map(([name,entries])=>`<section class="pl-panel"><header class="pl-phone-head"><h3>${esc(name)}</h3><span>${entries.length} تحويلة</span></header><div class="pl-phone-list">${entries.map(e=>`<div class="pl-phone-row"><button data-plus="phone-copy" data-ext="${esc(e.ext)}" title="نسخ رقم التحويلة"><strong dir="ltr">${esc(e.ext)}</strong></button><div><b dir="auto">${esc(e.name)}</b><small>${esc(e.dept)} · ${esc(e.floor)}${e.note?' · '+esc(e.note):''}</small></div><button class="btn sm" data-plus="phone-edit" data-id="${esc(e.id)}">تعديل</button></div>`).join('')}</div></section>`).join('')}</div>`;
+  }
+  function archiveHTML(){
+    return `<div class="pl-panel">${X.archived.length?X.archived.map(t=>`<div class="pl-archive-row"><div><b>${esc(t.title)}</b><small>${esc(projectName(t.projectId))} · ${fDateTime.format(t.archivedAt||t.updatedAt)}</small></div><div><button class="btn sm" data-plus="archive-restore" data-id="${esc(t.id)}">استرجاع</button><button class="btn sm danger" data-plus="archive-delete" data-id="${esc(t.id)}">حذف نهائي</button></div></div>`).join(''):'<p class="pl-empty">لا توجد مهام مؤرشفة.</p>'}</div>`;
+  }
+  function extraPage(){
+    const titles={calendar:['التقويم','المهام المجدولة والمواعيد حسب الأشهر'],phone:['دليل الهواتف','التحويلات الداخلية للمجموعة — يمكن للجميع تحديثها'],projects:['المشاريع','تصنيف المهام وقياس الإنجاز'],archive:['أرشيف المهام','استرجاع المهام أو حذفها بواسطة مدير النظام']};
+    const [head,sub]=titles[S.view]||['',''];
+    $('#dateNav').hidden=true;$('#kpis').hidden=true;$('#kpiHelp').hidden=true;$('#notices').hidden=true;$('.toolbar').hidden=true;
+    $('#pageHead').innerHTML=`<div><h1>${head}</h1><p>${sub}</p></div><div class="page-actions">${S.view==='projects'&&isMgr()?`<button class="btn primary" data-plus="project-new">${ic('plus')} مشروع جديد</button>`:''}${S.view==='calendar'&&isMgr()?`<button class="btn primary" data-act="new">${ic('plus')} مهمة جديدة</button>`:''}</div>`;
+    $('#view').innerHTML=S.view==='calendar'?calendarHTML():S.view==='phone'?phoneHTML():S.view==='projects'?projectsHTML():archiveHTML();
+    ScrollFX.sync();document.title=`${head} | ${CONFIG.appTitle}`;
+  }
+
+  const oldSide=renderSide;
+  renderSide=function(){oldSide();const n=$('#sideNav');if(!n)return;
+    const item=(v,icon,title)=>`<button type="button" class="nav-item" data-act="view" data-v="${v}" ${S.view===v?'aria-current="page"':''}>${ic(icon)}<span>${title}</span></button>`;
+    const log=n.querySelector('[data-v="log"]');
+    if(log)log.insertAdjacentHTML('afterend',item('phone','phone','دليل الهواتف')+item('calendar','calendar','التقويم')+item('projects','folder','المشاريع')+(isAdmin()?item('archive','archive','الأرشيف'):''));
+    if(isAdmin()){const users=n.querySelector('[data-act="users"]');if(users)n.appendChild(users);}
+  };
+  const oldRender=render;
+  render=function(){if(!S.me)return;
+    if(['board','log'].includes(S.view)){
+      $('#dateNav').hidden=false;$('#kpis').hidden=false;$('#kpiHelp').hidden=false;$('#notices').hidden=false;$('.toolbar').hidden=false;
+      oldRender();
+      if(X.projectFilter){const h=$('#toolDyn');if(h&&!h.querySelector('#plProjectFilter'))h.insertAdjacentHTML('afterbegin',projectFilterHTML());}
+      else{const h=$('#toolDyn');if(h&&!h.querySelector('#plProjectFilter')&&X.projects.length)h.insertAdjacentHTML('afterbegin',projectFilterHTML());}
+    }else{renderSide();extraPage();}
+    decorateBell();
+  };
+  function projectFilterHTML(){return `<label class="pl-inline-project">المشروع <select id="plProjectFilter"><option value="">جميع المشاريع</option>${X.projects.map(p=>`<option value="${esc(p.id)}" ${X.projectFilter===p.id?'selected':''}>${esc(p.name)}</option>`).join('')}</select></label>`;}
+  // Keep filters inside the original board/log calculations.
+  const oldApply=applyFilters;
+  applyFilters=function(items){return oldApply(items).filter(x=>!X.projectFilter||x.t.projectId===X.projectFilter);};
+
+  const oldOnData=onData;
+  onData=function(data){
+    X.projects=data.tasks.filter(x=>x.recordType==='project').map(x=>({id:x.id,name:x.name||x.title,desc:x.desc||''}));
+    X.hub=data.tasks.find(x=>x.id===hubId)||null;
+    X.archived=data.tasks.filter(x=>!x.recordType&&x.archived).map(normalize);
+    buildDirectory();
+    const active=data.tasks.filter(x=>!x.recordType&&!x.archived);
+    oldOnData({users:data.users,tasks:active});
+    buildNotices();decorateBell();
+    queueBackground();
+  };
+  const oldAuth=onAuth;
+  onAuth=function(u,msg){
+    if(!u){X.notices=[];X.noticeKeys.clear();X.firstNotices=true;X.hub=null;X.projects=[];X.directory=[];X.archived=[];}
+    oldAuth(u,msg);
+  };
+  const oldDetail=renderDetail;
+  renderDetail=function(){oldDetail();const t=replaceTask(S.openDetail);if(!t)return;
+    const b=$('#detailBody .dlg-b');if(!b)return;
+    const comments=(t.history||[]).filter(h=>h.type==='comment').sort((a,b)=>a.at-b.at);
+    const canComment=canStatus(t);
+    const req=lastDelegation(t),reply=req&&delegationReply(req);
+    const canRequest=t.status!=='done'&&t.assignees.length===1&&(t.assignees.includes(S.me.id)||isMgr())&&!req;
+    const canReply=req&&req.to===S.me.id&&!reply;
+    const html=`<div class="pl-details-block"><div class="pl-tags">${ic('folder')} ${esc(projectName(t.projectId))}${t.seriesRoot&&t.repeatMode!=='none'?` · ${ic('repeat')} ${esc(({daily:'يومي',weekly:'أسبوعي',monthly:'شهري'})[t.repeatMode])}`:''}${t.repeatParent?' · تكرار':''}</div>
+       <h3 class="d-sub">${ic('message')} الملاحظات والتحديثات <small>(${comments.length})</small></h3>
+       <div class="pl-comments">${comments.length?comments.map(h=>`<div class="pl-comment"><div><b>${esc(uname(h.by))}</b><time>${fDateTime.format(h.at)}</time></div><p>${esc(h.text)}</p></div>`).join(''):'<p class="hint">لا توجد ملاحظات بعد.</p>'}</div>
+       ${canComment?`<form id="plCommentForm" data-id="${esc(t.id)}"><label for="plCommentText">أضف ملاحظة أو توجيهاً</label><textarea id="plCommentText" maxlength="1600" rows="3" placeholder="اكتب آخر المستجدات..." required></textarea><button class="btn primary" type="submit">إضافة الملاحظة</button></form>`:''}
+       <h3 class="d-sub">${ic('share')} التفويض والتواصل</h3>
+       ${req?`<div class="pl-info">طلب تفويض من ${esc(uname(req.by))} إلى ${esc(uname(req.to))}. ${esc(req.reason||'')}${reply?` — ${reply.decision==='accept'?'قُبل؛ في انتظار إتمام التحويل من المدير':'رُفض'} `:''}</div>`:''}
+       <div class="pl-detail-actions">${canRequest?`<button class="btn" data-plus="transfer" data-id="${esc(t.id)}">${isMgr()?'إعادة إسناد':'طلب تفويض لزميل'}</button>`:''}
+       ${canReply?`<button class="btn primary" data-plus="transfer-reply" data-id="${esc(t.id)}" data-decision="accept">قبول الاستلام</button><button class="btn" data-plus="transfer-reply" data-id="${esc(t.id)}" data-decision="decline">رفض الاستلام</button>`:''}
+       ${isMgr()?`<button class="btn" data-plus="outlook" data-id="${esc(t.id)}">${ic('mail')} إعداد رسالة Outlook</button>`:''}</div></div>`;
+    const section=document.createElement('section');section.innerHTML=html;const history=b.querySelector('.hist');if(history)b.insertBefore(section,history);else b.appendChild(section);
+    const f=$('#detailBody .dlg-f'),del=f?.querySelector('[data-act="del"]');
+    if(del){if(isAdmin()){del.dataset.act='xdel';del.dataset.plus='archive';del.textContent='أرشفة المهمة';}else del.remove();}
+  };
+
+  function showOutlook(t){
+    const to=uniq((t.assignees?.length?t.assignees:allUsers().map(u=>u.id)).map(emailFor)).join(';');
+    if(!to)return toast('لا توجد عناوين بريد للمكلفين. أضف البريد في حسابات المستخدمين.','err');
+    const subject=`إسناد مهمة: ${t.title}`;
+    const link=`https://hualrugaib-lab.github.io/daily-tasks/#task=${encodeURIComponent(t.id)}`;
+    const body=`مرحباً،\n\nتم إسناد المهمة التالية لكم:\n\nالمهمة: ${t.title}\nالمشروع: ${projectName(t.projectId)}\nالتفاصيل: ${t.desc||'—'}\nالموعد النهائي: ${fDateTime.format(t.dueAt)}\n\nرابط المهمة: ${link}\n\nمع التحية،\n${S.me.name}\n`;
+    const params=new URLSearchParams({to,subject,body});
+    window.open('https://outlook.office.com/mail/deeplink/compose?'+params.toString(),'_blank','noopener');
+    toast('فُتحت رسالة Outlook جاهزة. راجعها واضغط إرسال من حسابك الشخصي.');
+  }
+  async function archive(id,restore=false){
+    if(!isAdmin())return toast('مدير النظام فقط يمكنه أرشفة أو حذف المهام','err');
+    const t=replaceTask(id);if(!t)return;
+    const yes=await ask({title:restore?'استرجاع المهمة':'أرشفة المهمة',body:`هل تريد ${restore?'استرجاع':'أرشفة'} «${t.title}»؟`,ok:restore?'استرجاع':'أرشفة'});
+    if(!yes)return;const now=Date.now();
+    try{await S.store.updateTask(id,{archived:!restore,archivedAt:restore?null:now,updatedAt:now,updatedBy:S.me.id},{type:restore?'restore':'archive',at:now,by:S.me.id,eid:rid()});$('#dlgDetail').open&&$('#dlgDetail').close();toast(restore?'استُرجعت المهمة':'أُرشفت المهمة');}
+    catch(e){toast('تعذر الحفظ: '+errText(e),'err');}
+  }
+  async function deleteArchived(id){if(!isAdmin())return;
+    const t=replaceTask(id);if(!t)return;
+    const yes=await ask({title:'حذف نهائي',body:`ستُحذف «${t.title}» نهائياً مع ملاحظاتها. هذا الإجراء لا يمكن التراجع عنه.`,ok:'حذف نهائي',danger:true});
+    if(!yes)return;try{await S.store.deleteTask(id);toast('حُذفت المهمة');}catch(e){toast(errText(e),'err');}
+  }
+  async function createProject(){if(!isMgr())return;
+    const name=await ask({title:'إضافة مشروع',ok:'إضافة',input:{label:'اسم المشروع',required:'اسم المشروع مطلوب'}});
+    if(!name)return;if(X.projects.some(p=>norm(p.name)===norm(name)))return toast('اسم المشروع موجود بالفعل','err');
+    const now=Date.now();try{await createRecord({recordType:'project',title:name,name:name,desc:'',assignees:[],createdAt:now,createdBy:S.me.id,updatedAt:now,updatedBy:S.me.id,dueAt:now+86400000,status:'open',completedAt:null,priority:'normal',history:[{type:'create',at:now,by:S.me.id}]});toast('تم إنشاء المشروع');}catch(e){toast(errText(e),'err');}
+  }
+  async function renameProject(id){if(!isMgr())return;const p=X.projects.find(x=>x.id===id);if(!p)return;
+    const name=await ask({title:'تعديل اسم المشروع',ok:'حفظ',input:{label:'اسم المشروع',value:p.name,required:'الاسم مطلوب'}});if(!name)return;
+    try{await S.store.updateTask(id,{name,title:name,updatedAt:Date.now(),updatedBy:S.me.id},{type:'edit',by:S.me.id,at:Date.now()});toast('تم التعديل');}catch(e){toast(errText(e),'err');}
+  }
+
+  function openPhoneEditor(id=null){X.editPhone=id;
+    const p=X.directory.find(x=>x.id===id);for(const k of ['name','ext','dept','floor','note'])$('#pl_'+k).value=p?.[k]||'';
+    $('#plPhoneTitle').textContent=p?'تعديل التحويلة':'إضافة تحويلة';$('#plPhoneError').textContent='';$('#plPhoneDelete').hidden=!p;$('#plPhoneDlg').showModal();
+  }
+  async function savePhone(e){e.preventDefault();const entry={id:X.editPhone||rid(),seq:X.directory.find(x=>x.id===X.editPhone)?.seq||Date.now()};
+    for(const k of ['name','ext','dept','floor','note'])entry[k]=$('#pl_'+k).value.trim();
+    if(!entry.name||!entry.ext)return $('#plPhoneError').textContent='الاسم ورقم التحويلة مطلوبان.';
+    try{await hubEvent({type:'phone_put',entry});$('#plPhoneDlg').close();toast('حُفظت التحويلة في Firebase لجميع المستخدمين');}catch(x){$('#plPhoneError').textContent=errText(x);}
+  }
+  async function importPhone(file){if(!file||!isMgr())return;
+    try{const raw=await file.text();let list;
+      if(file.name.toLowerCase().endsWith('.json'))list=JSON.parse(raw);
+      else {const m=raw.match(/var\s+SEED\s*=\s*(\[[\s\S]*?\]);/);if(!m)throw Error('لم يتم العثور على بيانات التحويلات داخل الملف.');list=JSON.parse(m[1]);}
+      if(!Array.isArray(list)||list.length>300)throw Error('صيغة الملف غير صحيحة أو كبيرة جداً.');
+      list=list.filter(e=>e&&String(e.name||'').trim()&&String(e.ext||'').trim()).map((e,i)=>({id:String(e.id||'n'+i),name:String(e.name).slice(0,120),ext:String(e.ext).slice(0,20),floor:String(e.floor||''),dept:String(e.dept||''),note:String(e.note||''),seq:+e.seq||i+1}));
+      if(!list.length)throw Error('الملف لا يحتوي على أرقام صالحة.');
+      const ok=await ask({title:'استيراد دليل الهواتف',body:`سيتم حفظ ${list.length} تحويلة في Firestore. سيراها أعضاء النظام بعد تسجيل الدخول، ولن تُنشر في ملف HTML.`,ok:'استيراد'});
+      if(!ok)return;await hubEvent({type:'phone_import',items:list});toast(`تم استيراد ${list.length} تحويلة`);
+    }catch(e){toast('تعذر الاستيراد: '+errText(e),'err');}
+  }
+  function exportPhone(){const q=v=>'"'+String(v??'').replace(/"/g,'""')+'"';
+    const rows=[['الاسم','التحويلة','القسم','الموقع','ملاحظة'],...X.directory.map(e=>[e.name,e.ext,e.dept,e.floor,e.note])];
+    const url=URL.createObjectURL(new Blob(['\ufeff'+rows.map(r=>r.map(q).join(',')).join('\r\n')],{type:'text/csv;charset=utf-8'}));
+    const a=document.createElement('a');a.href=url;a.download='دليل-الهواتف.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  }
+
+  // Extend the existing create/edit form rather than replacing its validation and time picker.
+  const form0=openTaskForm;
+  openTaskForm=function(id){form0(id);const t=id&&S.tasks.find(x=>x.id===id);$('#plProjectInput').innerHTML=`<option value="">مهام عامة (بدون مشروع)</option>${X.projects.map(p=>`<option value="${esc(p.id)}" ${p.id===t?.projectId?'selected':''}>${esc(p.name)}</option>`).join('')}`;
+    $('#plRepeatInput').value=t?.repeatMode||'none';
+    if(X.calendarSelection&&!t){const [y,m,d]=X.calendarSelection.split('-').map(Number);const ref=new Date(y,m-1,d,12,0);setDateTimePicker('fDue',ref.getTime());X.calendarSelection=null;}
+  };
+  const submit0=submitTask;
+  submitTask=async function(e){
+    if(!validateTitle() || !validateDue())return submit0(e);
+    const wasEdit=!!S.editing, prior=wasEdit?S.tasks.find(t=>t.id===S.editing):null;
+    const chosenProject=$('#plProjectInput').value,chosenRepeat=$('#plRepeatInput').value;
+    const inputAssignees=$$('#fPicks input:checked').map(i=>i.value);
+    if(!wasEdit){
+      // Intercept creation so the new fields are saved atomically with the task.
+      e.preventDefault();const now=Date.now(),btn=$('#fSubmit');btn.disabled=true;
+      try{const title=$('#fTitle').value.trim(),desc=$('#fDesc').value.trim(),due=getDateTimePicker('fDue');
+        const record={title,desc,assignees:inputAssignees,priority:$('#fUrgent').checked?'urgent':'normal',createdAt:now,createdBy:S.me.id,dueAt:due,
+          status:'open',completedAt:null,updatedAt:now,updatedBy:S.me.id,projectId:chosenProject,repeatMode:chosenRepeat,seriesRoot:chosenRepeat!=='none',history:[{type:'create',at:now,by:S.me.id}]};
+        const id=await createRecord(record);$('#dlgTask').close();toast('أُضيفت المهمة', '', {label:'فتح رسالة Outlook',fn:()=>showOutlook({...record,id})});
+        if(isMgr() && chosenRepeat!=='none')X.lastRepeat=0;
+        if(S.view==='board'){S.day=sod(now);S.ribbonEnd=sod(now);}
+        if(chosenRepeat!=='none')setTimeout(makeRepeats,500);
+      }catch(e){$('#fErr').textContent=errText(e);}finally{btn.disabled=false;}
+      return;
+    }
+    // Preserve existing update path, then save extra metadata and assignment log.
+    const prevAssignees=[...(prior?.assignees||[])];
+    await submit0(e);
+    if(!$('#dlgTask').open && prior){
+      const now=Date.now(),meta={projectId:chosenProject,repeatMode:chosenRepeat,seriesRoot:chosenRepeat!=='none',updatedAt:now,updatedBy:S.me.id};
+      const added=inputAssignees.filter(id=>!prevAssignees.includes(id));
+      try{await S.store.updateTask(prior.id,meta,[{type:'edit',at:now,by:S.me.id,eid:rid()},...(added.length?[{type:'assign',at:now+1,by:S.me.id,eid:rid(),to:added}]:[])]);}catch(ex){toast('حُفظت المهمة ولكن تعذر حفظ المشروع أو التكرار: '+errText(ex),'err');}
+    }
+  };
+
+  const oldActVerb = actVerb;
+  actVerb = function(h){
+    if(h.type==='comment')return 'إضافة ملاحظة على المهمة';
+    if(h.type==='delegate_request')return `طلب تفويض إلى ${esc(uname(h.to))}`;
+    if(h.type==='delegate_done')return `نقل التكليف إلى ${esc(uname(h.to))}`;
+    if(h.type==='archive')return 'أرشفة المهمة';
+    if(h.type==='assign')return 'إسناد المهمة إلى موظف إضافي';
+    return oldActVerb(h);
+  };
+  exportCSV = function(){
+    const rows=logRows(),now=Date.now(); if(!rows.length)return toast('لا توجد مهام لتصديرها','err');
+    const clean=v=>{let s=String(v??'');if(/^[=+\-@]/.test(s))s="'"+s;return /[",\r\n]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s;};
+    const date=x=>x?toLocalInput(x).replace('T',' '):'';
+    const columns=[['المهمة','المشروع','التكرار','الحالة','متأخرة','المكلفون','تفاصيل المهمة','عدد الملاحظات','نصوص الملاحظات','الإنشاء','الموعد النهائي','الإنجاز'],
+      ...rows.map(t=>[t.title,projectName(t.projectId),({none:'لا يوجد',daily:'يومي',weekly:'أسبوعي',monthly:'شهري'})[t.repeatMode]||'لا يوجد',ST[t.status],isLateNow(t,now)?'نعم':'لا',t.assignees.length?t.assignees.map(uname).join('، '):'الفريق كامل',t.desc,(t.history||[]).filter(h=>h.type==='comment').length,(t.history||[]).filter(h=>h.type==='comment').map(h=>uname(h.by)+': '+h.text).join(' | '),date(t.createdAt),date(t.dueAt),date(t.completedAt)])];
+    const blob=new Blob(['\uFEFF'+columns.map(row=>row.map(clean).join(',')).join('\r\n')],{type:'text/csv;charset=utf-8'});
+    const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='سجل-المهام-'+keyDate(now)+'.csv';document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(url);a.remove();},500);toast(`تم تصدير ${rows.length} مهمة`);
+  };
+  // Original task deletion remains visually available only to administrators.
+  document.addEventListener('click',async e=>{
+    const b=e.target.closest('[data-plus]');if(!b)return;
+    e.preventDefault();const act=b.dataset.plus,id=b.dataset.id;
+    try{
+      if(act==='notices')showNotices();
+      if(act==='notice-read'){markNotices();toast('تمت قراءة التنبيهات');}
+      if(act==='notice-open'){const seen=readSet();seen.add(b.dataset.key);saveRead(seen);$('#plusNotices').close();openDetail(id);}
+      if(act==='cal-prev'){X.calendarMonth=new Date(X.calendarMonth.getFullYear(),X.calendarMonth.getMonth()-1,1);render();}
+      if(act==='cal-next'){X.calendarMonth=new Date(X.calendarMonth.getFullYear(),X.calendarMonth.getMonth()+1,1);render();}
+      if(act==='cal-today'){X.calendarMonth=new Date(new Date().getFullYear(),new Date().getMonth(),1);render();}
+      if(act==='cal-open')openDetail(id);
+      if(act==='cal-add'){X.calendarSelection=b.dataset.date;openTaskForm();}
+      if(act==='project-new')await createProject();
+      if(act==='project-rename')await renameProject(id);
+      if(act==='project-show'){X.projectFilter=id;setView('log');}
+      if(act==='phone-new')openPhoneEditor();
+      if(act==='phone-edit')openPhoneEditor(id);
+      if(act==='phone-copy'){await navigator.clipboard.writeText(b.dataset.ext||'');toast('نُسخ رقم التحويلة');}
+      if(act==='phone-export')exportPhone();
+      if(act==='phone-delete'){
+        const row=X.directory.find(x=>x.id===X.editPhone);
+        if(row&&await ask({title:'حذف تحويلة',body:`هل تريد حذف تحويلة «${row.name}»؟`,ok:'حذف التحويلة',danger:true})){
+          await hubEvent({type:'phone_del',entryId:row.id});$('#plPhoneDlg').close();toast('حُذفت التحويلة');
+        }
+      }
+      if(act==='phone-import')$('#plPhoneFile').click();
+      if(act==='archive')await archive(id);
+      if(act==='archive-restore')await archive(id,true);
+      if(act==='archive-delete')await deleteArchived(id);
+      if(act==='outlook'){const t=replaceTask(id);if(t)showOutlook(t);}
+      if(act==='transfer'){
+        const t=replaceTask(id);if(!t)return;
+        $('#plTransferId').value=id;$('#plTransferTo').innerHTML=allUsers().filter(u=>!t.assignees.includes(u.id)).map(u=>`<option value="${esc(u.id)}">${esc(u.name)}</option>`).join('');
+        $('#plTransferReason').value='';$('#plTransferError').textContent='';$('#plTransferDlg').showModal();
+      }
+      if(act==='transfer-reply')await respondTransfer(id,b.dataset.decision);
+    }catch(ex){toast('تعذر تنفيذ العملية: '+errText(ex),'err');}
+  });
+  document.addEventListener('change',e=>{
+    if(e.target.id==='plProjectFilter'){X.projectFilter=e.target.value;render();}
+    if(e.target.id==='plCalYear'){X.calendarMonth=new Date(+e.target.value,X.calendarMonth.getMonth(),1);render();}
+    if(e.target.id==='plPhoneGroup'){X.phoneGrouping=e.target.value;render();}
+    if(e.target.id==='plPhoneFile'){const file=e.target.files?.[0];if(file)importPhone(file);e.target.value='';}
+  });
+  document.addEventListener('input',e=>{if(e.target.id==='plPhoneSearch'){X.phoneQuery=e.target.value;const s=e.target.selectionStart;render();const i=$('#plPhoneSearch');i?.focus();i?.setSelectionRange(s,s);}});
+  document.addEventListener('submit',async e=>{
+    if(e.target.id==='plCommentForm'){
+      e.preventDefault();const id=e.target.dataset.id,text=e.target.querySelector('textarea')?.value.trim();
+      try{await addComment(id,text);}catch(ex){toast('تعذر إضافة الملاحظة: '+errText(ex),'err');}
+    }
+    if(e.target.id==='plPhoneForm')await savePhone(e);
+    if(e.target.id==='plTransferForm'){
+      e.preventDefault();const id=$('#plTransferId').value,to=$('#plTransferTo').value,reason=$('#plTransferReason').value.trim();
+      if(!to)return $('#plTransferError').textContent='اختر الموظف الذي ستنقل إليه المهمة.';
+      try{
+        const t=replaceTask(id),now=Date.now();if(!t)return;
+        if(isMgr())await S.store.updateTask(id,{assignees:[to],updatedAt:now,updatedBy:S.me.id},{type:'delegate_done',eid:rid(),at:now,by:S.me.id,from:t.assignees[0]||'',to,requestId:rid()});
+        else await requestTransfer(id,to,reason);
+        $('#plTransferDlg').close();toast(isMgr()?'تم نقل التكليف':'أُرسل طلب التفويض إلى الزميل');
+      }catch(x){$('#plTransferError').textContent=errText(x);}
+    }
+  });
+  // Capture-only hash linking, lets Outlook link directly open a task after login.
+  const oldSetView=setView;
+  setView=function(v){oldSetView(v);};
+  const oldLogRows=logRows;
+  logRows=function(){return oldLogRows().filter(t=>!X.projectFilter||t.projectId===X.projectFilter);};
+  const oldExport=exportCSV;
+  exportCSV=function(){oldExport();};
+
+  // Rewrite the old activity labels for newly introduced audited events.
+  const oldHistItem=histItem;
+  histItem=function(h){
+    if(h.type==='comment')return `<li><b>${esc(uname(h.by))}</b>: أضاف ملاحظة <time>${fDateTime.format(h.at)}</time></li>`;
+    if(h.type==='delegate_request')return `<li><b>${esc(uname(h.by))}</b>: طلب تفويضاً إلى ${esc(uname(h.to))}<time>${fDateTime.format(h.at)}</time></li>`;
+    if(h.type==='delegate_done')return `<li><b>${esc(uname(h.by))}</b>: نقل التكليف إلى ${esc(uname(h.to))}<time>${fDateTime.format(h.at)}</time></li>`;
+    if(h.type==='archive')return `<li><b>${esc(uname(h.by))}</b>: أرشف المهمة <time>${fDateTime.format(h.at)}</time></li>`;
+    return oldHistItem(h);
+  };
+  return {X};
+})();
 
 /* ========= التشغيل ========= */
 (async function boot() {
